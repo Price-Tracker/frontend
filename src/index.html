@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" href="assets/css/style.css" />
 
+    <link rel="shortcut icon" href="/assets/images/newlogo/logo-color.png" type="image/x-icon" />
+
     
     <title>Трекер цен</title>
    
@@ -17,7 +19,11 @@
     <header class="header header-absolute">
         <div class="container">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a href="index.html" class="navbar-brand order-1 order-lg-2"><img src="assets/images/logo.svg" alt="Logo"></a>
+
+          <!-- <a href="index.html" class="navbar-brand order-1 order-lg-2"><img src="assets/images/logo.png" height="50px" width="50px"></a> -->
+            
+          <a href="index.html" class="navbar-brand order-1 order-lg-2"> <img src="assets/images/newlogo/logo-trans.png" onmouseover="this.src='assets/images/newlogo/logo-color.png'" onmouseout="this.src='assets/images/newlogo/logo-trans.png'" width="50px" height="50px"></a>
+
   
             <div class="collapse navbar-collapse order-4 order-lg-1" id="navbarMenu">
               <ul class="navbar-nav mr-auto">
@@ -137,21 +143,20 @@
                   <!-- search -->
                   <li class="nav-item dropdown dropdown-md dropdown-hover">
                     <a class="nav-icon dropdown-toggle" id="navbarDropdown-4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <!-- <i class="icon-search d-none d-lg-inline-block"></i> -->
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                      <span class="d-inline-block d-lg-none">Search</span>
+                      <img src="assets/images/navbar/search.png" height="20px" width="20px">
+                      <span class="d-inline-block d-lg-none">Поиск</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown-4">
                       <div class="form-group">
-                        <input type="text" class="form-control" id="searchForm" placeholder="Search for items and brands">
+                        <input type="text" class="form-control" id="searchForm" placeholder="Поиск товаров">
                       </div>
                     </div>
-                  </li>           
+                  </li>         
     
                   <!-- user area -->
                   <li class="nav-item dropdown dropdown-md dropdown-hover">
                     <a class="nav-icon dropdown-toggle" id="navbarDropdown-6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="d-none d-lg-inline-block"></i>
+                      <img src="assets/images/navbar/profile.png" height="20px" width="20px">
                       <span class="d-inline-block d-lg-none">Аккаунт</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown-6">
@@ -189,7 +194,9 @@
     
                   <!-- favourites -->
                   <li class="d-none d-lg-inline nav-item dropdown dropdown-md dropdown-hover">
-                    <a class="nav-icon" id="navbarDropdown-7" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class=""></i></a>
+                    <a class="nav-icon" id="navbarDropdown-7" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="assets/images/navbar/heart.png" height="20px" width="20px">
+                    </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown-7">
                       <div class="row gutter-3">
                         <div class="col-12">
@@ -208,7 +215,7 @@
                   <!-- cart -->
                   <li class="nav-item dropdown dropdown-md dropdown-hover">
                     <a class="nav-icon dropdown-toggle" id="navbarDropdown-8" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="d-none d-lg-inline-block"></i>
+                      <img src="assets/images/navbar/shopping.png" height="20px" width="20px">
                       <span class="d-inline-block d-lg-none">Корзина</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown-8">

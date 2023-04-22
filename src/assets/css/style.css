@@ -2969,8 +2969,11 @@ input[type="button"].btn-block {
   margin-right: 5px;
   font-size: 1.125rem;
   line-height: inherit;
+  opacity: 0.7;
+  transition: opacity 1s ;
   white-space: nowrap; }
   .navbar-brand:hover, .navbar-brand:focus {
+    opacity: 1;
     text-decoration: none; }
 
 .navbar-nav {
@@ -13433,3 +13436,7 @@ div.code-toolbar > .toolbar {
 
 .status.verified::after {
   background: #28a745; }
+
+  .image-container {
+    position: relative;
+  }
