@@ -29,3 +29,28 @@ jobs:
           tags: |
             ghcr.io/price-tracker/frontend:latest
             ghcr.io/price-tracker/frontend:${{ github.sha }}
+
+  deploy:
+    name: Deploy
+    if: github.ref == 'refs/heads/main'
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set the Kubernetes context
+        uses: azure/k8s-set-context@v3
+        with:
+          method: service-account
+          k8s-url: https://noxer-server.tail1f457.ts.net:8443
+          k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
+
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Deploy to the Kubernetes cluster
+        uses: azure/k8s-deploy@v4
+        with:
+          namespace: pricetracker-frontend
+          manifests: |
+            kubernetes/deployment.yaml
+          images: |
+            ghcr.io/price-tracker/frontend:${{ github.sha }}
