@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="assets/css/style.css" />
+    <link rel="shortcut icon" href="/assets/images/logo.ico" type="image/x-icon" />
+
+    <title>Трекер цен</title>
+
+</head>
+
+<body>
+
+
+     <!-- header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a href="index.html" class="navbar-brand order-1 order-lg-2"><img src="assets/images/logo.png" height="50px" width="50px"></a>
+        <div class="collapse navbar-collapse order-4 order-lg-1" id="navbarMenu">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown dropdown-sm dropdown-hover">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown-1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Магазины</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown-1">
+                <ul class="menu-list">
+                  <li class="menu-list-item"><a href="index.html" class="menu-list-link">Green</a></li>
+                  <li class="menu-list-item"><a href="index.html" class="menu-list-link">Дионис</a></li>
+                  <li class="menu-list-item"><a href="index.html" class="menu-list-link">Копеечка</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown dropdown-lg dropdown-hover">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Каталог</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown-2">
+                <div class="container">
+                  <div class="row gutter-2">
+
+                    <div class="col-lg-2">
+                      <ul class="menu-list">
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Веганские продукты</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Здоровое питание</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Фрукты</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Овощи</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="col-lg-2">
+                      <ul class="menu-list">
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Товары для детей и мам</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Кондитерские изделия</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Молочные продукты</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Хлебобулочные</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="col-lg-2">
+                      <ul class="menu-list">
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Мясная гастрономия</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Морепродукты</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Мясо, птица</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Бакалея</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="col-lg-2">
+                      <ul class="menu-list">
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Замороженные продукты</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Вода, соки, напитки</a></li>
+                        <li class="menu-list-item"><a href="listing.html" class="menu-list-link">Кофе, чай, какао</a></li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown dropdown-sm dropdown-hover">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown-1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Корзина</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown-1">
+                <ul class="menu-list">
+                  <li class="menu-list-item"><a href="cart.html" class="menu-list-link">Проверить</a></li>
+                  <li class="menu-list-item"><a href="cart.html" class="menu-list-link">Корзина</a></li>
+                  <li class="menu-list-item"><a href="cart.html" class="menu-list-link">Заказ</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown dropdown-lg dropdown-hover">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Аккаунт</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown-2">
+                <div class="container">
+                  <div class="row gutter-2">
+
+                    <div class="col-lg-2">
+                      <ul class="menu-list">
+                        <li class="menu-list-item"><a href="account-personal-data.html" class="menu-list-link">Список заказов</a></li>
+                        <li class="menu-list-item"><a href="account-personal-data.html" class="menu-list-link">Информация для заказа</a></li>
+                        <li class="menu-list-item"><a href="account-personal-data.html" class="menu-list-link">Избранное</a></li>
+                        <li class="menu-list-item"><a href="account-personal-data.html" class="menu-list-link">Персональные данные</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="col-lg-2">
+                      <ul class="menu-list">
+                        <li class="menu-list-item"><a href="account-personal-data.html" class="menu-list-link">Изменитьпароль</a></li>
+                        <li class="menu-list-item"><a href="account-personal-data.html" class="menu-list-link">Адрес</a></li>
+                        <li class="menu-list-item"><a href="account-personal-data.html" class="menu-list-link">Изменитьадрес</a></li>
+                        <li class="menu-list-item"><a href="account-personal-data.html" class="menu-list-link">Авторизоваться</a></li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="history.html">История</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse order-5 order-lg-3" id="navbarMenu2">
+          <ul class="navbar-nav ml-auto position-relative">
+
+            <!-- search -->
+            <li class="nav-item dropdown dropdown-md dropdown-hover">
+              <a class="nav-icon dropdown-toggle" id="navbarDropdown-4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="assets/images/navbar/search.png" height="20px" width="20px">
+                <span class="d-inline-block d-lg-none">Поиск</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="searchForm" placeholder="Поиск товаров">
+                </div>
+              </div>
+            </li>
+
+            <!-- user area -->
+            <li class="nav-item dropdown dropdown-md dropdown-hover">
+              <a class="nav-icon dropdown-toggle" id="navbarDropdown-6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="assets/images/navbar/profile.png" height="20px" width="20px">
+                <span class="d-inline-block d-lg-none">Аккаунт</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown-6">
+                <div class="row gutter-2">
+                  <div class="col-12">
+                    <fieldset>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputName" class="form-control form-control-lg" placeholder="Name"
+                              required="">
+                            <label for="inputName">Имя</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputSurname" class="form-control form-control-lg"
+                              placeholder="Surname" required="">
+                            <label for="inputSurname">Фамилия</label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-12 text-center">
+                    <a href="" class="underline fs-14">Забыли пароль ?</a>
+                  </div>
+                  <div class="col-12">
+                    <a href="" class="btn btn-primary btn-block">Войти</a>
+                    <a href="" class="btn btn-outline-secondary btn-block">Создать аккаунт</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- favourites -->
+            <li class="d-none d-lg-inline nav-item dropdown dropdown-md dropdown-hover">
+              <a class="nav-icon" id="navbarDropdown-7" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="assets/images/navbar/heart.png" height="20px" width="20px">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown-7">
+                <div class="row gutter-3">
+                  <div class="col-12">
+                    <h3 class="eyebrow text-dark fs-16 mb-1">Мои понравившиеся</h3>
+                    <p class="text-muted fs-14"><a href="" class="underline">Войдите</a> чтобы хранить ваши сохранения
+                      до 60 дней.</p>
+                  </div>
+
+                  <div class="col-12">
+                    <a href="" class="btn btn-primary btn-block">Добавить все в корзину</a>
+                    <a href="" class="btn btn-outline-secondary btn-block">Посмотреть избранное</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- shopping -->
+            <li class="nav-item dropdown dropdown-md dropdown-hover">
+              <a class="nav-icon dropdown-toggle" id="navbarDropdown-8" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="assets/images/navbar/shopping.png" height="20px" width="20px">
+                <span class="d-inline-block d-lg-none">Корзина</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown-8">
+                <div class="row gutter-3">
+                  <div class="col-12">
+                    <h3 class="eyebrow text-dark fs-16 mb-0">Моя корзина</h3>
+                  </div>
+                  <div class="col-12">
+                    <ul class="list-group list-group-minimal">
+                      <li class="list-group-item d-flex justify-content-between align-items-center text-uppercase font-weight-bold">Промежуточный итог<span>0.00 руб</span></li>
+                    </ul>
+                  </div>
+                  <div class="col-12">
+                    <a href="" class="btn btn-primary btn-block">Очистить корзину</a>
+                    <a href="" class="btn btn-outline-secondary btn-block">Посмотреть избранное</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+          </ul>
+        </div> 
+        <div class="order-2 d-flex d-lg-none" id="navbarMenuMobile">
+          <ul class="navbar-nav navbar-nav--icons ml-auto position-relative">
+
+            <!-- search -->
+            <li class="nav-item">
+              <img src="assets/images/navbar/search.png" height="20px" width="20px">
+            </li>
+
+            <!-- cart -->
+            <li class="nav-item dropdown dropdown-md dropdown-hover">
+              <img src="assets/images/navbar/shopping.png" height="20px" width="20px">
+            </li>
+
+            <!-- menu -->
+            <li class="nav-item dropdown dropdown-md dropdown-hover">
+              <img src="assets/images/navbar/menu.png" height="30px" width="30px">
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+    <!-- breadcrumbs -->
+    <section class="breadcrumbs bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#!">Главная</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Овощи</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Плодовые</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- listing -->
+    <section class="pt-6">
+        <div class="container">
+
+            <!-- sort -->
+            <div class="row gutter-1 align-items-end">
+                <div class="col-md-6">
+                    <h1>Плодовые</h1>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <ul class="list list--horizontal list--separated text-muted fs-14">
+                        <li>
+                            <span class="text-primary">6 из 30 товаров</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- filters -->
+            <div class="row filter">
+                <div class="col-md-6 col-lg">
+                    <div class="dropdown">
+                        <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Страна производитель
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg">
+                    <div class="dropdown">
+                        <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-2"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Торговая марка
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg">
+                    <div class="dropdown">
+                        <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-3"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Тип товара
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg">
+                    <div class="dropdown">
+                        <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-4"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Диапазон цены
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- products -->
+            <div class="row gutter-1">
+
+                <div class="col-6 col-md-4">
+                    <div class="card card-product">
+                        <figure class="card-image">
+                            <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
+                            <a href="#!">
+                                <img src="assets/images/products/tomato.jpg" alt="Image">
+                            </a>
+                            <span class="badge badge-success">New</span>
+                        </figure>
+                        <div class="card-footer">
+                            <h3 class="card-title"><a href="">Tomato</a></h3>
+                            <span class="brand">Belarus</span>
+                            <span class="price">0.00 руб</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card card-product">
+                        <figure class="card-image">
+                            <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
+                            <a href="#!">
+                                <img src="assets/images/products/cucumber.jpg" alt="Image">
+                            </a>
+                            <span class="badge badge-success">New</span>
+                        </figure>
+                        <div class="card-footer">
+                            <h3 class="card-title"><a href="">Cucumber</a></h3>
+                            <span class="brand">Belarus</span>
+                            <span class="price">0.00 руб</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card card-product">
+                        <figure class="card-image">
+                            <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
+                            <a href="#!">
+                                <img src="assets/images/products/eggplant.jpg" alt="Image">
+                            </a>
+                            <span class="badge badge-success">New</span>
+                        </figure>
+                        <div class="card-footer">
+                            <h3 class="card-title"><a href="">Eggplant</a></h3>
+                            <span class="brand">Ukraine</span>
+                            <span class="price">0.00 руб</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card card-product">
+                        <figure class="card-image">
+                            <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
+                            <a href="#!">
+                                <img src="assets/images/products/marrow.jpg" alt="Image">
+                            </a>
+                            <span class="badge badge-success">New</span>
+                        </figure>
+                        <div class="card-footer">
+                            <h3 class="card-title"><a href="">Marrow</a></h3>
+                            <span class="brand">Russia</span>
+                            <span class="price">0.00 руб</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card card-product">
+                        <figure class="card-image">
+                            <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
+                            <a href="#!">
+                                <img src="assets/images/products/pumpkin.jpg" alt="Image">
+                            </a>
+                            <span class="badge badge-success">New</span>
+                        </figure>
+                        <div class="card-footer">
+                            <h3 class="card-title"><a href="">Pumpkin</a></h3>
+                            <span class="brand">Belarus</span>
+                            <span class="price">0.00 руб</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card card-product">
+                        <figure class="card-image">
+                            <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
+                            <a href="#!">
+                                <img src="assets/images/products/pepper.jpg" alt="Image">
+                            </a>
+                            <span class="badge badge-success">New</span>
+                        </figure>
+                        <div class="card-footer">
+                            <h3 class="card-title"><a href="">Sweet Pepper</a></h3>
+                            <span class="brand">Ukraine</span>
+                            <span class="price">0.00 руб</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#!">Предыдущая</a></li>
+                            <li class="page-item active"><a class="page-link" href="#!">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#!">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#!">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#!">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#!">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#!">Следующая</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+  <footer class="bg-dark pb-0 text-white">
+    <div class="container">
+      <div class="row justify-content-md-between gutter-2">
+
+        <div class="order-1">
+          <div class="row">
+            <div class="col">
+              <h4 class="eyebrow mb-1">О сервисе</h4>
+              <ul class="menu-list">
+                <li class="menu-list-item"><a href="" class="menu-list-link">Возможности</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Применение</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Партнерам</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Цены</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-2">
+          <div class="row">
+            <div class="col">
+              <h4 class="eyebrow mb-1">Центр поддержки</h4>
+              <ul class="menu-list">
+                <li class="menu-list-item"><a href="" class="menu-list-link">Перевозки</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Возврат</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Оплата</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">FAQ</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-3">
+          <div class="row">
+            <div class="col">
+              <h4 class="eyebrow mb-1">База знаний</h4>
+              <ul class="menu-list">
+                <li class="menu-list-item"><a href="" class="menu-list-link">Настройка системы</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Справочный центр</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Интеграции</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Отчеты</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-4">
+          <div class="row">
+            <div class="col">
+              <h4 class="eyebrow mb-1">Компания</h4>
+              <ul class="menu-list">
+                <li class="menu-list-item"><a href="" class="menu-list-link">Наша история</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Преса о нас</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Карьера</a></li>
+                <li class="menu-list-item"><a href="" class="menu-list-link">Контакты</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-transparent mt-8 py-2">
+      <div class="container">
+        <div class="row align-items-center gutter-1">
+          <div class="col-md-8">
+            <p class="small text-muted">&copy; 2023 PriceTracker</p>
+          </div>
+          <div class="col-md-4 text-md-right text-muted">
+            <ul class="list list--horizontal list--separated">
+              <li>
+                <a class="small underline" href="#!">Политика конфиденциальности</a>
+              </li>
+              <li>
+                <a class="small underline" href="#!">Условия эксплуатации</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
