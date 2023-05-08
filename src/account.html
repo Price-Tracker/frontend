@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+  <body class="bg-light">
 
 
     <!-- header -->
@@ -263,305 +263,291 @@
       </div>
     </header>
 
-  <!-- breadcrumbs -->
-  <section class="breadcrumbs bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#!">Главная</a></li>
-              <li class="breadcrumb-item"><a href="#!">Овощи</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Плодовые</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- content -->
+    <section>
+        <div class="container">
+          <div class="row gutter-1 gutter-md-2">
+            <div class="col-lg-4">
+              <aside class="bg-white p-2 p-md-3">
+                <h3 class="fs-20 text-uppercase text-muted mb-2">Добро пожаловать, Имя!</h3>
+                <div class="nav nav-menu flex-column lavalamp" id="sidebar-1" role="tablist">
+                  <a class="nav-link" data-toggle="tab" href="#sidebar-1-1" role="tab" aria-controls="sidebar-1" aria-selected="true">Корзина</a>
+                  <a class="nav-link" data-toggle="tab" href="#sidebar-1-2" role="tab" aria-controls="sidebar-1-2" aria-selected="false">Избранное</a>
+                  <a class="nav-link" data-toggle="tab" href="#sidebar-1-3" role="tab" aria-controls="sidebar-1-3" aria-selected="false">Персональные данные </a>
+                  <a class="nav-link" data-toggle="tab" href="#sidebar-1-4" role="tab" aria-controls="sidebar-1-4" aria-selected="false">Сменить пароль</a>
+                  <a class="nav-link" data-toggle="tab" href="#sidebar-1-5" role="tab" aria-controls="sidebar-1-5" aria-selected="false">Адрес</a>
+                </div>
+              </aside>
+            </div>
+            <div class="col-lg-8">
+              <div class="bg-white p-2 p-md-3">
+                <div class="tab-content" id="myTabContent">
+  
+                  <!-- orders -->
+                  <div class="tab-pane fade show active" id="sidebar-1-1" role="tabpanel" aria-labelledby="sidebar-1-1">
+                    <div class="row">
+                      <div class="col">
+                        <h2>Корзина</h2>
+                      </div>
+                    </div>
+                    <div class="row gutter-2">
+                      <div class="col-12">
+                        <div class="card card-data bordered">
+                          <div class="card-header">
+                            <div class="row align-items-center">
+                              <div class="col">
+                                <h2 class="card-title fs-18"><a href="">Корзина 1</a></h2>
+                              </div>
+                              <div class="col text-right">
+                                <span class="dropdown">
+                                  <button class="btn btn-lg btn-white btn-ico" id="dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button"></button>
+                                  <span class="dropdown-menu" aria-labelledby="dropdown-1">
+                                    <a class="dropdown-item" href="#!">Удалить</a>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <ul class="order-preview">
+                              <li><a href="" title="Name name name name" data-toggle="tooltip" data-placement="top"><img src="assets/images/demo/beverages.webp"></a></li>
+                              <li><a href="" title="Name name name name" data-toggle="tooltip" data-placement="top"><img src="assets/images/demo/fruits.webp"></a></li>
+                              <li><a href="" title="Name name name name" data-toggle="tooltip" data-placement="top"><img src="assets/images/demo/seafood.webp"></a></li>
+                            </ul>
+                          </div>
+                          <div class="card-body">
+                            <ul class="order-meta">
+                              <li>
+                                <h5 class="order-meta-title">Корзина #</h5>
+                                <span>1</span>
+                              </li>
+                              <li>
+                                <h5 class="order-meta-title">Дата создания</h5>
+                                <span>11 Марта 2023</span>
+                              </li>
+                              <li>
+                                <h5 class="order-meta-title">Сумма</h5>
+                                <span>149.74 Руб.</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- favorites -->
+                  <div class="tab-pane fade" id="sidebar-1-2" role="tabpanel" aria-labelledby="sidebar-1-2">
+                    <div class="row align-items-end">
+                      <div class="col">
+                        <h2>Избранное</h2>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- personal data -->
+                  <div class="tab-pane fade" id="sidebar-1-3" role="tabpanel" aria-labelledby="sidebar-1-3">
+                    <div class="row">
+                      <div class="col">
+                        <h2>Персональные данные</h2>
+                      </div>
+                    </div>
+                    
+                    <fieldset class="mb-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputName2" class="form-control form-control-lg" placeholder="" required="">
+                            <label for="inputName2">Имя</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputSurname2" class="form-control form-control-lg" placeholder="" required="">
+                            <label for="inputSurname2">Фамилия</label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+  
+                    <fieldset class="mb-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="email" id="inputEmail" class="form-control form-control-lg" placeholder="" required="">
+                            <label for="inputEmail">Email</label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+  
+                    <fieldset class="mb-2">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="form-label-group">
+                              <input type="email" id="inputEmail" class="form-control form-control-lg" placeholder="" required="">
+                              <label for="inputEmail">Дата рождения</label>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+  
+                    <div class="row">
+                      <div class="col-12">
+                        <span class="label">Пол</span>
+                      </div>
+                      <div class="col">
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                          <label class="custom-control-label" for="customRadioInline1">Мужской</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                          <label class="custom-control-label" for="customRadioInline2">Женский</label>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col">
+                        <a href="" class="btn btn-primary">Сохранить изменения</a>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- change password -->
+                  <div class="tab-pane fade" id="sidebar-1-4" role="tabpanel" aria-labelledby="sidebar-1-4">
+                    <div class="row">
+                      <div class="col">
+                        <h2>Сменить пароль</h2>
+                      </div>
+                    </div>
+                    
+                    <fieldset class="mb-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="password" id="inputPassword" class="form-control form-control-lg" placeholder="" required="">
+                            <label for="inputPassword">Текущий пароль</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="password" id="inputPassword2" class="form-control form-control-lg" placeholder="" required="">
+                            <label for="inputPassword2">Новый пароль</label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+  
+                    <div class="row">
+                      <div class="col">
+                        <a href="" class="btn btn-primary">Сохранить пароль</a>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- addresses -->
+                <div class="tab-pane fade show active" id="sidebar-1-5" role="tabpanel" aria-labelledby="sidebar-1-5">
+                    <div class="row">
+                      <div class="col">
+                        <h2>Адрес</h2>
+                      </div>
+                    </div>
+                    
+                    <fieldset class="mb-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputName2" class="form-control form-control-lg" placeholder="" required="">
+                            <label for="inputName2">Имя</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputSurname2" class="form-control form-control-lg" placeholder="" required="">
+                            <label for="inputSurname2">Фамилия</label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+  
+                    <fieldset class="mb-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputAddress" class="form-control form-control-lg" placeholder="" required="">
+                            <label for="inputAddress">Адрес</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputApt" class="form-control form-control-lg" placeholder="" required="">
+                            <label for="inputApt">Улица, Дом, т.п.</label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+  
+                    <fieldset class="mb-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputCity" class="form-control form-control-lg" placeholder="City" required="">
+                            <label for="inputCity">Город</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputCity" class="form-control form-control-lg" placeholder="City" required="">
+                            <label for="inputCity">Город</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputCity" class="form-control form-control-lg" placeholder="City" required="">
+                            <label for="inputCity">Город</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-label-group">
+                            <input type="text" id="inputCity" class="form-control form-control-lg" placeholder="City" required="">
+                            <label for="inputCity">Город</label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+  
+                    <div class="row">
+                      <div class="col">
+                        <a href="" class="btn btn-primary">Сохранить изменения</a>
+                      </div>
+                    </div>
+                  </div>
 
-  <!-- listing -->
-  <section class="pt-6">
-    <div class="container">
-
-      <!-- sort -->
-      <div class="row gutter-1 align-items-end">
-        <div class="col-md-6">
-          <h1>Плодовые</h1>
-        </div>
-        <div class="col-md-6 text-md-right">
-          <ul class="list list--horizontal list--separated text-muted fs-14">
-            <li>
-              <span class="text-primary">6 из 30 товаров</span>
-            </li>
-            <li>
-              <span>Сортировать по
-                <span class="dropdown">
-                  <a class="dropdown-toggle underline" href="#!" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Популярности
-                  </a>
-                  <span class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#!">Популярности</a>
-                    <a class="dropdown-item" href="#!">Цена возрастание</a>
-                    <a class="dropdown-item" href="#!">Цена убывание</a>
-                  </span>
-                </span>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- filters -->
-      <div class="row filter">
-        <div class="col-md-6 col-lg">
-          <div class="dropdown">
-            <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-1"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Страна производитель
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdown-filter-1">
-              <form>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Беларусь</label>
                 </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck2">
-                  <label class="custom-control-label" for="customCheck2">Украина</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck3">
-                  <label class="custom-control-label" for="customCheck3">Россия</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck4">
-                  <label class="custom-control-label" for="customCheck4">Польша</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck5">
-                  <label class="custom-control-label" for="customCheck5">Литва</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck6">
-                  <label class="custom-control-label" for="customCheck6">Латвая</label>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-6 col-lg">
-          <div class="dropdown">
-            <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-2"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Торговая марка
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdown-filter-2">
-              <form>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck7">
-                  <label class="custom-control-label" for="customCheck7">Савушкин продукт</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck8">
-                  <label class="custom-control-label" for="customCheck8">Матиас</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck9">
-                  <label class="custom-control-label" for="customCheck9">Коммунарка</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck10">
-                  <label class="custom-control-label" for="customCheck10">Спартак</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck11">
-                  <label class="custom-control-label" for="customCheck11">Витьба</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck12">
-                  <label class="custom-control-label" for="customCheck12">Беллакт</label>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg">
-          <div class="dropdown">
-            <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-3"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Тип товара
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdown-filter-3">
-              <form>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck13">
-                  <label class="custom-control-label" for="customCheck13">Овощи</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck14">
-                  <label class="custom-control-label" for="customCheck14">Кондитерские товары</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck15">
-                  <label class="custom-control-label" for="customCheck15">Зерномучные товары</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck16">
-                  <label class="custom-control-label" for="customCheck16">Плоды и грибы</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck17">
-                  <label class="custom-control-label" for="customCheck17">Рыбные товары</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck18">
-                  <label class="custom-control-label" for="customCheck18">Мясные товары</label>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg">
-          <div class="dropdown">
-            <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-4"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Диапазон цены
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdown-filter-4">
-              <form>
-                <input type="text" class="rangeslider" name="Range Slider" value=""/>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+         </div>
+      </section>
 
 
-      <!-- products -->
-      <div class="row gutter-1">
-
-        <div class="col-6 col-md-4">
-          <div class="card card-product">
-            <figure class="card-image">
-              <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
-              <a href="#!">
-                <img src="assets/images/products/tomato.jpg" alt="Image">
-              </a>
-              <span class="badge badge-success">New</span>
-            </figure>
-            <div class="card-footer">
-              <h3 class="card-title"><a href="">Tomato</a></h3>
-              <span class="brand">Belarus</span>
-              <span class="price">0.00 руб</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4">
-          <div class="card card-product">
-            <figure class="card-image">
-              <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
-              <a href="#!">
-                <img src="assets/images/products/cucumber.jpg" alt="Image">
-              </a>
-              <span class="badge badge-success">New</span>
-            </figure>
-            <div class="card-footer">
-              <h3 class="card-title"><a href="">Cucumber</a></h3>
-              <span class="brand">Belarus</span>
-              <span class="price">0.00 руб</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4">
-          <div class="card card-product">
-            <figure class="card-image">
-              <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
-              <a href="#!">
-                <img src="assets/images/products/eggplant.jpg" alt="Image">
-              </a>
-              <span class="badge badge-success">New</span>
-            </figure>
-            <div class="card-footer">
-              <h3 class="card-title"><a href="">Eggplant</a></h3>
-              <span class="brand">Ukraine</span>
-              <span class="price">0.00 руб</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4">
-          <div class="card card-product">
-            <figure class="card-image">
-              <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
-              <a href="#!">
-                <img src="assets/images/products/marrow.jpg" alt="Image">
-              </a>
-              <span class="badge badge-success">New</span>
-            </figure>
-            <div class="card-footer">
-              <h3 class="card-title"><a href="">Marrow</a></h3>
-              <span class="brand">Russia</span>
-              <span class="price">0.00 руб</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4">
-          <div class="card card-product">
-            <figure class="card-image">
-              <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
-              <a href="#!">
-                <img src="assets/images/products/pumpkin.jpg" alt="Image">
-              </a>
-              <span class="badge badge-success">New</span>
-            </figure>
-            <div class="card-footer">
-              <h3 class="card-title"><a href="">Pumpkin</a></h3>
-              <span class="brand">Belarus</span>
-              <span class="price">0.00 руб</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4">
-          <div class="card card-product">
-            <figure class="card-image">
-              <a href="#!" class="action"><img src="assets/images/navbar/heart.png"></i></a>
-              <a href="#!">
-                <img src="assets/images/products/pepper.jpg" alt="Image">
-              </a>
-              <span class="badge badge-success">New</span>
-            </figure>
-            <div class="card-footer">
-              <h3 class="card-title"><a href="">Sweet Pepper</a></h3>
-              <span class="brand">Ukraine</span>
-              <span class="price">0.00 руб</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <nav aria-label="Page navigation">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#!">Предыдущая</a></li>
-              <li class="page-item active"><a class="page-link" href="#!">1</a></li>
-              <li class="page-item"><a class="page-link" href="#!">2</a></li>
-              <li class="page-item"><a class="page-link" href="#!">3</a></li>
-              <li class="page-item"><a class="page-link" href="#!">4</a></li>
-              <li class="page-item"><a class="page-link" href="#!">5</a></li>
-              <li class="page-item"><a class="page-link" href="#!">Следующая</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- footer -->
+    <!-- footer -->
   <footer class="bg-dark pb-0 text-white">
     <div class="container">
       <div class="row justify-content-md-between gutter-2">
@@ -646,9 +632,8 @@
   </footer>
 
 
-  <script src="assets/js/vendor.min.js"></script>
-  <script src="assets/js/app.js"></script>
 
-</body>
-
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>
