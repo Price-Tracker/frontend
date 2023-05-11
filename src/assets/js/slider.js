@@ -68,4 +68,4 @@ function resetTimer() {
     startTimer();
 }
 
-startTimer(); 
+startTimer();

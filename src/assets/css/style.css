@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:400,700&display=swap");
+/*!
+ * Bootstrap v4.5.2 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9985,7 +9991,7 @@ fieldset {
   content: "\e9d7"; }
 
 .icon-search:before {
-  content: "\e9d8";}
+  content: "\e9d8"; }
 
 .icon-send:before {
   content: "\e9d9"; }
@@ -13434,6 +13440,4 @@ div.code-toolbar > .toolbar {
 .status.verified::after {
   background: #28a745; }
 
-  .image-container {
-    position: relative;
-  }
+/*# sourceMappingURL=style.css.map */
