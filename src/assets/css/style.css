@@ -11856,7 +11856,7 @@ dt {
     -webkit-transition-delay: 0s;
     -moz-transition-delay: 0s;
     transition-delay: 0s;
-    color: #777777; }
+    color: #000; }
     .nav .nav-link[data-filter] {
       color: #777777; }
     .nav .nav-link.active {
@@ -11886,7 +11886,7 @@ dt {
       -moz-transition-delay: 0s;
       transition-delay: 0s;
       position: absolute;
-      content: "\e93c";
+      content: url("/assets/images/navbar/right.svg");
       width: 1em;
       line-height: 1em;
       right: 1.25rem;
