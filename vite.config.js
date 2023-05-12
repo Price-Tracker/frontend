@@ -1,5 +1,7 @@
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+
+import { resolve } from 'path'
 
 var rootDir = 'src';
 
@@ -16,5 +18,8 @@ export default defineConfig({
                 listing: resolve(__dirname, rootDir + '/listing.html'),
             },
         },
-    }
+    },
+    plugins: [
+        ViteImageOptimizer({})
+    ],
 })
