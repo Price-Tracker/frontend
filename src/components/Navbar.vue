@@ -2,9 +2,14 @@
     <header class="bg-gray-800">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-around items-center">
-                <a href="/" class="text-white font-bold text-xl hover:blur-lg transition duration-150 ease-out hover:ease-in">
-                    My Logo
-                </a>
+                <nav class="flex justify-around items-center">
+                    <ul class="flex space-x-4">
+                        <li v-for="link of links_part1">
+                            <nuxt-link :key="link.name" :to="link.to" exact v-text="link.name"
+                                class="text-white hover:text-gray-300" />
+                        </li>
+                    </ul>
+                </nav>
                 <nav>
                     <ul class="flex space-x-4">
                         <li class="group relative">
@@ -43,6 +48,10 @@
 export default {
     data() {
         return {
+            links_part1: [
+                { to: '/shops', name: 'Магазины' },
+                { to: '/catalog', name: 'Каталог' },
+            ],
             popupLinks: [
                 { text: 'Link 1', url: '#link1' },
                 { text: 'Link 2', url: '#link2' },
