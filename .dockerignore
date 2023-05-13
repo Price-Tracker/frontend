@@ -1,0 +1,7 @@
+.git
+.nuxt
+*.nix
+Dockerfile
+flake.lock
+node_modules
+unrelated
