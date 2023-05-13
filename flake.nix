@@ -15,6 +15,7 @@
         devShells.default = with pkgs; mkShell {
           nativeBuildInputs = [
             nodejs
+            yarn
             libwebp
             python3
           ];

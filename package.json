@@ -1,22 +1,16 @@
 {
-  "name": "frontend",
+  "name": "nuxt-app",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "sharp": "^0.32.1",
-    "svgo": "^3.0.2",
-    "vite": "^4.3.5",
-    "vite-plugin-image-optimizer": "^1.1.4"
-  },
-  "dependencies": {
-    "@gridsome/cli": "^0.3.4",
-    "bootstrap": "^4.6.1",
-    "bootstrap-vue": "^2.23.1"
+    "@nuxtjs/tailwindcss": "^6.6.8",
+    "@types/node": "^18",
+    "nuxt": "^3.4.3"
   }
 }
