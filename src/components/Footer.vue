@@ -1,35 +1,35 @@
 <template>
-    <footer class="bg-black text-gray-300">
+    <footer class="bg-black text-gray-300 p-4">
         <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-around">
-                <div class="grid mx-3">
-                    <div class="text-lg mb-2">
-                        <p>О сервисе</p>
-                        <p>Возможности</p>
-                        <p>Применение</p>
-                        <p>Партнерам</p>
-                        <p>Цены</p>
-                    </div>
-                </div>
-                <div class="grid mx-3">
-                    <div class="text-lg mb-2">
-                        <p>База знаний</p>
-                        <p>Настройка системы</p>
-                        <p>Справочный центр</p>
-                        <p>Интеграции</p>
-                        <p>Отчеты</p>
-                    </div>
-                </div>
-                <div class="grid mx-3">
-                    <div class="text-lg mb-2">
-                        <p>Компания</p>
-                        <p>Наша истоия</p>
-                        <p>Преса о нас</p>
-                        <p>Карьера</p>
-                        <p>Контакты</p>
-                    </div>
-                </div>
+            <div class="grid gap-2 grid-cols-2 sm:grid-cols-3 justify-items-center md:auto-cols-min sm:max-h-32 sm:text-sm">
+                <div v-for="(item, index) in links"><a :href="item.to">{{ item.label }}</a> </div>
             </div>
         </div>
     </footer>
-</template>  
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            links: [
+                { label: 'О сервисе', to: '#' },
+                { label: 'Возможности', to: '#' },
+                { label: 'Применение', to: '#' },
+                { label: 'Партнерам', to: '#' },
+                { label: 'Цены', to: '#' },
+                { label: 'База знаний', to: '#' },
+                { label: 'Настройка системы', to: '#' },
+                { label: 'Справочный центр', to: '#' },
+                { label: 'Интеграции', to: '#' },
+                { label: 'Отчеты', to: '#' },
+                { label: 'Компания', to: '#' },
+                { label: 'Наша история', to: '#' },
+                { label: 'Преса о нас', to: '#' },
+                { label: 'Карьера', to: '#' },
+                { label: 'Контакты', to: '#' },
+            ],
+        };
+    },
+};
+</script>
