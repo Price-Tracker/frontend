@@ -2,7 +2,7 @@
     <header class="bg-gray-800">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <a href="/" class="text-white font-bold text-xl">
+                <a href="/" class="text-white font-bold text-xl hover:blur-lg transition duration-150 ease-out hover:ease-in">
                     My Logo
                 </a>
                 <nav>
