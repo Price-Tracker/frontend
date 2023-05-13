@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-wrap justify-center">
-        <div v-for="(item, index) in productNames"
-            class="m-5 border border-blue-300 shadow rounded-md p-4 max-w-2xl w-full">
+    <div class="flex flex-wrap justify-center max-w-7xl mx-auto">
+        <div v-for="index in productCount"
+            class="m-5 border border-blue-300 shadow rounded-md p-4 max-w-xl w-full">
             <div class="animate-pulse flex space-x-4">
                 <div class="rounded-full bg-slate-200 h-20 w-20"></div>
                 <div class="flex-1 space-y-6 py-1">
@@ -23,12 +23,7 @@
 export default {
     data() {
         return {
-            productNames: [
-                { name: 'Товар 1' },
-                { name: 'Товар 2' },
-                { name: 'Товар 3' },
-                { name: 'Товар 4' },
-            ],
+            productCount: 8,
         };
     },
 };
