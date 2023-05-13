@@ -5,8 +5,9 @@
                 <nav class="flex justify-around items-center">
                     <ul class="flex space-x-4">
                         <li v-for="link of links_part1">
-                            <nuxt-link :key="link.name" :to="link.to" exact v-text="link.name"
-                                class="text-white hover:text-gray-300" />
+                            <NuxtLink class="text-white hover:text-gray-300" :to="link.to">
+                                {{ link.name }}
+                            </NuxtLink>
                         </li>
                     </ul>
                 </nav>
