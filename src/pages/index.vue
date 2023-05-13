@@ -23,7 +23,7 @@
 export default {
     data() {
         return {
-            productCount: 8,
+            productCount: 12,
         };
     },
 };

@@ -6,5 +6,6 @@
             <slot />
         </div>
         <Footer/>
+        <Copyright/>
     </div>
 </template>
