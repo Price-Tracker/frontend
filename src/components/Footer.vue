@@ -1,0 +1,31 @@
+<template>
+    <footer class="bg-black">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="columns-3">
+                    <div class="grid gap-4 grid-cols 3 grid-rows 1">
+                        <div class="font-bold text-lg mb-2 text-white">
+                            <p>О сервисе</p>
+                            <p>Возможности</p>
+                            <p>Применение</p>
+                            <p>Партнерам</p>
+                            <p>Цены</p>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-4 grid-cols 3 grid-rows 1">
+                        <div class="font-bold text-lg mb-2 text-white">
+                            <p>База знаний</p>
+                            <p>Настройка системы</p>
+                            <p>Справочный центр</p>
+                            <p>Интеграции</p>
+                            <p>Отчеты</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+</template>  
