@@ -15,6 +15,8 @@
     "vite-plugin-image-optimizer": "^1.1.4"
   },
   "dependencies": {
-    "@gridsome/cli": "^0.3.4"
+    "@gridsome/cli": "^0.3.4",
+    "bootstrap": "^4.6.1",
+    "bootstrap-vue": "^2.23.1"
   }
 }

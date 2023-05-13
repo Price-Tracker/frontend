@@ -18,54 +18,36 @@
         <div class="row gutter-1">
 
           <div class="col-md-4">
-            <div class="card card-product">
-              <figure class="card-image">
-                <a href="#!" class="action">
-                  <!-- <img src="../assets/images/navbar/heart.svg" height="40px" width="40px"> -->
-                  <img src="../assets/images/demo/confectionery.jpg" alt="Image">
-                </a>
-                <span class="badge badge-success">Хит</span>
-              </figure>
-              <div class="card-footer">
-                <h3 class="card-title"><a href="">текст</a></h3>
-                <span class="brand">текст</span>
-                <span class="price">0.00 руб</span>
-              </div>
-            </div>
+            <b-card no-body border-variant="none">
+              <b-card-img top :src="require('@/assets/images/demo/confectionery.jpg')"></b-card-img>
+              <b-badge variant="success" class="position-absolute top-0 start-0 m-3">Хит</b-badge>
+              <b-card-footer>
+                <b-card-title>Товар</b-card-title>
+                <b-card-sub-title>Текст</b-card-sub-title>
+              </b-card-footer>
+            </b-card>
           </div>
 
           <div class="col-md-4">
-            <div class="card card-product">
-              <figure class="card-image">
-                <a href="#!" class="action">
-                  <!-- <img src="../assets/images/navbar/heart.svg" height="40px" width="40px"> -->
-                  <img src="../assets/images/demo/seafood.jpg" alt="Image">
-                </a>
-                <span class="badge badge-success">Хит</span>
-              </figure>
-              <div class="card-footer">
-                <h3 class="card-title"><a href="">текст</a></h3>
-                <span class="brand">текст</span>
-                <span class="price">0.00 руб</span>
-              </div>
-            </div>
+            <b-card no-body border-variant="none">
+              <b-card-img top :src="require('@/assets/images/demo/confectionery.jpg')"></b-card-img>
+              <b-badge variant="success" class="position-absolute top-0 start-0 m-3">Хит</b-badge>
+              <b-card-footer>
+                <b-card-title>Товар</b-card-title>
+                <b-card-sub-title>Текст</b-card-sub-title>
+              </b-card-footer>
+            </b-card>
           </div>
 
           <div class="col-md-4">
-            <div class="card card-product">
-              <figure class="card-image">
-                <a href="#!" class="action">
-                  <!-- <img src="../assets/images/navbar/heart.svg" height="40px" width="40px"> -->
-                  <img src="../assets/images/demo/beverages.jpg" alt="Image">
-                </a>
-                <span class="badge badge-success">Хит</span>
-              </figure>
-              <div class="card-footer">
-                <h3 class="card-title"><a href="">текст</a></h3>
-                <span class="brand">текст</span>
-                <span class="price">0.00 руб</span>
-              </div>
-            </div>
+            <b-card no-body border-variant="none">
+              <b-card-img top :src="require('@/assets/images/demo/confectionery.jpg')"></b-card-img>
+              <b-badge variant="success" class="position-absolute top-0 start-0 m-3">Хит</b-badge>
+              <b-card-footer>
+                <b-card-title>Товар</b-card-title>
+                <b-card-sub-title>Текст</b-card-sub-title>
+              </b-card-footer>
+            </b-card>
           </div>
 
         </div>
@@ -88,7 +70,7 @@
             <a href="">
               <figure class="category category--alt">
                 <div class="equal">
-                  <img src="../assets/images/demo/healty-food.jpg" alt="Image">
+                  <g-image src="@/assets/images/demo/healty-food.jpg" class="img-fluid" />
                 </div>
                 <figcaption>Здоровое питание</figcaption>
               </figure>
@@ -98,7 +80,7 @@
             <a href="">
               <figure class="category category--alt">
                 <div class="equal">
-                  <img src="../assets/images/demo/fruits.jpg" alt="Image">
+                  <g-image src="@/assets/images/demo/fruits.jpg" class="img-fluid" />
                 </div>
                 <figcaption>Фрукты</figcaption>
               </figure>
@@ -108,7 +90,7 @@
             <a href="">
               <figure class="category category--alt">
                 <div class="equal">
-                  <img src="../assets/images/demo/vegetables.jpg" alt="Image">
+                  <g-image src="@/assets/images/demo/vegetables.jpg" class="img-fluid" />
                 </div>
                 <figcaption>Овощи</figcaption>
               </figure>
@@ -118,7 +100,7 @@
             <a href="">
               <figure class="category category--alt">
                 <div class="equal">
-                  <img src="../assets/images/demo/seafood.jpg" alt="Image">
+                  <g-image src="@/assets/images/demo/seafood.jpg" class="img-fluid" />
                 </div>
                 <figcaption>Морепродукты</figcaption>
               </figure>
@@ -128,7 +110,7 @@
             <a href="">
               <figure class="category category--alt">
                 <div class="equal">
-                  <img src="../assets/images/demo/confectionery.jpg" alt="Image">
+                  <g-image src="@/assets/images/demo/confectionery.jpg" class="img-fluid" />
                 </div>
                 <figcaption>Кондитерские изделия</figcaption>
               </figure>
@@ -138,7 +120,7 @@
             <a href="">
               <figure class="category category--alt">
                 <div class="equal">
-                  <img src="../assets/images/demo/coffee-and-tea.jpg" alt="Image">
+                  <g-image src="@/assets/images/demo/coffee-and-tea.jpg" class="img-fluid" />
                 </div>
                 <figcaption>Кофе, чай, какао</figcaption>
               </figure>
@@ -148,7 +130,7 @@
             <a href="">
               <figure class="category category--alt">
                 <div class="equal">
-                  <img src="../assets/images/demo/beverages.jpg" alt="Image">
+                  <g-image src="@/assets/images/demo/beverages.jpg" class="img-fluid" />
                 </div>
                 <figcaption>Вода, соки, напитки</figcaption>
               </figure>
@@ -158,7 +140,7 @@
             <a href="">
               <figure class="category category--alt">
                 <div class="equal">
-                  <img src="../assets/images/demo/bakery.jpg" alt="Image">
+                  <g-image src="@/assets/images/demo/bakery.jpg" class="img-fluid" />
                 </div>
                 <figcaption>Хлебобулочные</figcaption>
               </figure>
