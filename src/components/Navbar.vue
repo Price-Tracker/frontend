@@ -1,19 +1,18 @@
 <template>
     <header class="bg-gray-800">
         <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-around items-center">
                 <a href="/" class="text-white font-bold text-xl hover:blur-lg transition duration-150 ease-out hover:ease-in">
                     My Logo
                 </a>
                 <nav>
                     <ul class="flex space-x-4">
                         <li class="group relative">
-                            <a href="#home" class="text-white hover:text-gray-300 p-1">
+                            <a href="#home" class="text-white hover:text-gray-300 pb-2">
                                 Home
                             </a>
                             <div
-                                class="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg p-4 rounded hidden group-hover:block">
-                                <h3 class="font-bold text-lg mb-2">Home Popup</h3>
+                                class="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg p-4 pb-2 hidden group-hover:block z-10">
                                 <ul>
                                     <li v-for="(link, index) in popupLinks" :key="index">
                                         <a :href="link.url" class="block mb-2 hover:text-gray-600">
