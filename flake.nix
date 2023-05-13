@@ -16,7 +16,10 @@
           nativeBuildInputs = [
             nodejs
             libwebp
+            python3
           ];
+
+          NODE_OPTIONS = "--openssl-legacy-provider";
         };
       });
 }
