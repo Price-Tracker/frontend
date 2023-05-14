@@ -63,7 +63,7 @@ export default {
                 { to: '/catalog', name: 'Каталог' },
             ],
             links_part2: [
-                { to: '/signup', name: 'Регистрация' },
+                { to: '/signin', name: 'Авторизация' },
             ],
             popupLinks: [
                 { text: 'Link 1', url: '#link1' },
