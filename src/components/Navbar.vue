@@ -25,7 +25,7 @@
                     </button>
                 </div>
                 <nav>
-                    <ul class="flex space-x-4">
+                    <ul class="flex items-center space-x-4">
                         <li class="group relative">
                             <a href="#home" class="text-white hover:text-gray-300 pb-2">
                                 PopUp
@@ -42,9 +42,12 @@
                             </div>
                         </li>
                         <li v-for="link of links_part2">
-                            <NuxtLink class="text-white hover:text-gray-300" :to="link.to">
-                                {{ link.name }}
-                            </NuxtLink>
+                            <button class="flex flex-col items-center text-white hover:text-gray-300">
+                                <Icon :name="link.icon" size="2em" />
+                                <NuxtLink :to="link.to">
+                                    {{ link.name }}
+                                </NuxtLink>
+                            </button>
                         </li>
                     </ul>
                 </nav>
@@ -63,7 +66,7 @@ export default {
                 { to: '/catalog', name: 'Каталог' },
             ],
             links_part2: [
-                { to: '/signin', name: 'Авторизация' },
+                { to: '/signin', name: 'Войти', icon: 'ph:user' },
             ],
             popupLinks: [
                 { text: 'Link 1', url: '#link1' },
