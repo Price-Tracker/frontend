@@ -26,21 +26,6 @@
                 </div>
                 <nav>
                     <ul class="flex items-center space-x-4">
-                        <li class="group relative">
-                            <a href="#home" class="text-white hover:text-gray-300 pb-2">
-                                PopUp
-                            </a>
-                            <div
-                                class="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg p-4 pb-2 hidden group-hover:block z-10">
-                                <ul>
-                                    <li v-for="(link, index) in popupLinks" :key="index">
-                                        <a :href="link.url" class="block mb-2 hover:text-gray-600">
-                                            {{ link.text }}
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
                         <li v-for="link of links_part2">
                             <button class="flex flex-col items-center text-white hover:text-gray-300">
                                 <Icon :name="link.icon" size="2em" />
@@ -82,11 +67,6 @@ export default {
             ],
             links_part3: [
                 { to: '/signin', name: 'Войти', icon: 'ph:user' },
-            ],
-            popupLinks: [
-                { text: 'Link 1', url: '#link1' },
-                { text: 'Link 2', url: '#link2' },
-                { text: 'Link 3', url: '#link3' },
             ],
         };
     },
