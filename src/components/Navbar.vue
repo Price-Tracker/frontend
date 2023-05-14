@@ -26,11 +26,14 @@
                 </div>
                 <nav>
                     <ul class="flex items-center space-x-4">
-                        <li v-for="link of links_part2">
+                        <li>
                             <button class="flex flex-col items-center text-white hover:text-gray-300">
-                                <Icon :name="link.icon" size="2em" />
-                                <NuxtLink :to="link.to">
-                                    {{ link.name }}
+                                <Icon name="ph:user" size="2em" />
+                                <NuxtLink v-if="isLoggedIn" to="/account">
+                                    {{ username }}
+                                </NuxtLink>
+                                <NuxtLink v-else to="/signin">
+                                    Авторизация
                                 </NuxtLink>
                             </button>
                         </li>
@@ -42,7 +45,7 @@
                                 </NuxtLink>
                             </button>
                         </li>
-                       
+
                     </ul>
                 </nav>
             </div>
@@ -52,6 +55,22 @@
   
 <script>
 export default {
+    setup() {
+        const authStore = useAuthStore()
+
+        const isLoggedIn = computed(() => {
+            return authStore.accessToken !== null
+        })
+
+        const username = computed(() => {
+            return authStore.user
+        })
+
+        return {
+            isLoggedIn,
+            username,
+        }
+    },
     data() {
         return {
             links_part1: [
@@ -59,14 +78,8 @@ export default {
                 { to: '/shops', name: 'Магазины' },
                 { to: '/catalog', name: 'Каталог' },
             ],
-            links_part2: [
-                { to: '/favourite', name: 'Избранное', icon: 'ph:star' },
-            ],
-            links_part2: [
-                { to: '/signin', name: 'Избранное', icon: 'ph:star' },
-            ],
             links_part3: [
-                { to: '/signin', name: 'Войти', icon: 'ph:user' },
+                { to: '/favourite', name: 'Избранное', icon: 'ph:star' },
             ],
         };
     },

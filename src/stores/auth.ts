@@ -13,6 +13,9 @@ export const useAuthStore = defineStore({
       refreshToken: null,
     }
   },
+  persist: {
+    storage: persistedState.localStorage,
+  },
   actions: {
     setUser(user: object) {
       this.user = user
@@ -38,7 +41,7 @@ export const useAuthStore = defineStore({
         if (data.status === "success") {
           this.setAccessToken(data.data.access_token)
           this.setRefreshToken(data.data.refresh_token)
-          
+
           let parsedToken = parseJwt(data.data.access_token)
           console.log("Parsed token: " + JSON.stringify(parsedToken))
 

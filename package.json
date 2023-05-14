@@ -11,6 +11,7 @@
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-28059208.2abef1b",
     "@nuxtjs/tailwindcss": "^6.6.8",
+    "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
     "@types/node": "^18",
     "nuxt": "^3.4.3"
   },

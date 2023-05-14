@@ -5,10 +5,11 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@nuxt/image-edge',
         '@pinia/nuxt',
+        '@pinia-plugin-persistedstate/nuxt',
         'nuxt-icon',
     ],
     pinia: {
-        autoImports: [ "defineStore" ]
+        autoImports: ["defineStore"]
     },
     typescript: {
         shim: false
