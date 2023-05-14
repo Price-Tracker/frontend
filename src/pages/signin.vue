@@ -48,8 +48,8 @@
 
             <p class="mt-10 text-center text-sm text-gray-500">
                 Не зарегистрированы?
-                {{ ' ' }}
-                <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Зарегистрироваться</a>
+                <a href="/signup"
+                    class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Зарегистрироваться</a>
             </p>
         </div>
     </div>
