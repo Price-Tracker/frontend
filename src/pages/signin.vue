@@ -8,7 +8,7 @@
             </h2>
         </div>
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form @submit.prevent="signin" class="space-y-6">
+            <form @submit.prevent="signin" class="space-y-4">
                 <div>
                     <label for="login_or_email" class="block text-sm font-medium leading-6 text-gray-900">Логин или
                         почта</label>

@@ -8,7 +8,7 @@
             </h2>
         </div>
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form class="space-y-6" action="#" method="POST">
+            <form class="space-y-4" action="#" method="POST">
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Эл. почта
                     </label>
@@ -21,7 +21,7 @@
                     <button type="submit"
                         class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Отправить</button>
                 </div>
-                <p class="mt-4 text-center text-sm text-gray-500">
+                <p class="m-0 text-center text-sm text-gray-500">
                     <a href="/signin" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Назад</a>
                 </p>
             </form>
