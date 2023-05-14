@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxt/image-edge',
+        'nuxt-icon',
     ],
     typescript: {
         shim: false
