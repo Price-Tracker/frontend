@@ -27,7 +27,7 @@ export const useAuthStore = defineStore({
       this.refreshToken = token
     },
     async login(login_or_email: string, password: string) {
-      const response = await fetch('infinity.tail1f457.ts.net:10000/api/user/login', {
+      const response = await fetch('https://infinity.tail1f457.ts.net:10000/api/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
