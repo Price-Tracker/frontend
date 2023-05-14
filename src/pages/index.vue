@@ -1,5 +1,5 @@
 <template>
     <Bestseller/>
     <Category/>
-    <!-- <Products/> -->
+    <Products/>
 </template>

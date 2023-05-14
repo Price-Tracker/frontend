@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-indigo-600">
+    <header class="bg-black">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-around items-center">
                 <nav class="flex justify-around items-center">
@@ -49,6 +49,15 @@
                                 </NuxtLink>
                             </button>
                         </li>
+                        <li v-for="link of links_part3">
+                            <button class="flex flex-col items-center text-white hover:text-gray-300">
+                                <Icon :name="link.icon" size="2em" />
+                                <NuxtLink :to="link.to">
+                                    {{ link.name }}
+                                </NuxtLink>
+                            </button>
+                        </li>
+                       
                     </ul>
                 </nav>
             </div>
@@ -66,6 +75,12 @@ export default {
                 { to: '/catalog', name: 'Каталог' },
             ],
             links_part2: [
+                { to: '/favourite', name: 'Избранное', icon: 'ph:star' },
+            ],
+            links_part2: [
+                { to: '/signin', name: 'Избранное', icon: 'ph:star' },
+            ],
+            links_part3: [
                 { to: '/signin', name: 'Войти', icon: 'ph:user' },
             ],
             popupLinks: [
@@ -77,4 +92,3 @@ export default {
     },
 };
 </script>
-  

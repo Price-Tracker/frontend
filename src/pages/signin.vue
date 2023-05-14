@@ -7,7 +7,6 @@
             <h2 class="mt-5 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Вход в аккаунт
             </h2>
         </div>
-
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <form class="space-y-6" action="#" method="POST">
                 <div>
@@ -42,7 +41,7 @@
                     class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Зарегистрироваться</a>
             </p>
             <div class="text-sm text-center">
-                <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Забыли пароль?</a>
+                <a href="/recovery" class="font-semibold text-indigo-600 hover:text-indigo-500">Забыли пароль?</a>
             </div>
         </div>
     </div>
