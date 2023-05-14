@@ -15,7 +15,8 @@
     "nuxt": "^3.4.3"
   },
   "dependencies": {
-    "@sidebase/nuxt-auth": "0.6.0-beta.1",
-    "nuxt-icon": "^0.4.0"
+    "@pinia/nuxt": "^0.4.10",
+    "nuxt-icon": "^0.4.0",
+    "pinia": "^2.0.36"
   }
 }
