@@ -28,7 +28,7 @@
                     <ul class="flex space-x-4">
                         <li class="group relative">
                             <a href="#home" class="text-white hover:text-gray-300 pb-2">
-                                Home
+                                PopUp
                             </a>
                             <div
                                 class="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg p-4 pb-2 hidden group-hover:block z-10">
@@ -41,15 +41,10 @@
                                 </ul>
                             </div>
                         </li>
-                        <li>
-                            <a href="#about" class="text-white hover:text-gray-300">
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="text-white hover:text-gray-300">
-                                Contact
-                            </a>
+                        <li v-for="link of links_part2">
+                            <NuxtLink class="text-white hover:text-gray-300" :to="link.to">
+                                {{ link.name }}
+                            </NuxtLink>
                         </li>
                     </ul>
                 </nav>
@@ -63,8 +58,12 @@ export default {
     data() {
         return {
             links_part1: [
+                { to: '/', name: 'Главная' },
                 { to: '/shops', name: 'Магазины' },
                 { to: '/catalog', name: 'Каталог' },
+            ],
+            links_part2: [
+                { to: '/signup', name: 'Регистрация' },
             ],
             popupLinks: [
                 { text: 'Link 1', url: '#link1' },
