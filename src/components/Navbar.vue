@@ -33,7 +33,7 @@
                                     {{ username }}
                                 </NuxtLink>
                                 <NuxtLink v-else to="/signin">
-                                    Авторизация
+                                    Вход
                                 </NuxtLink>
                             </button>
                         </li>
