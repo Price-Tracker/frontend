@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         shim: false
     },
     auth: {
-        baseURL: 'http://localhost:8080/api/user',
+        baseURL: 'infinity.tail1f457.ts.net:10000/api/user',
         provider: {
             type: "local",
             endpoints: {
