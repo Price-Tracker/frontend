@@ -14,7 +14,8 @@
                     <label for="login_or_email" class="block text-sm font-medium leading-6 text-gray-900">Логин или
                         почта</label>
                     <div class="mt-2">
-                        <input id="login_or_email" name="login_or_email" type="email" autocomplete="email"
+                        <input v-model="login_or_email" id="login_or_email" name="login_or_email" type="email"
+                            autocomplete="email"
                             class="block p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                     </div>
                 </div>
@@ -24,12 +25,13 @@
                         <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Пароль</label>
                     </div>
                     <div class="mt-2">
-                        <input id="password" name="password" type="password" autocomplete="current-password"
+                        <input v-model="password" id="password" name="password" type="password"
+                            autocomplete="current-password"
                             class="block p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                     </div>
                 </div>
                 <div>
-                    <button type="submit"
+                    <button @click="auth"
                         class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Войти</button>
                 </div>
             </form>
@@ -45,3 +47,28 @@
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+    auth: {
+        unauthenticatedOnly: true,
+        navigateAuthenticatedTo: '/',
+    }
+})
+
+const login_or_email = ref('');
+const password = ref('');
+
+const { signIn } = useAuth()
+
+async function auth() {
+    try {
+        await signIn({
+            login_or_email: login_or_email.value,
+            password: password.value
+        });
+    } catch (error) {
+        console.error('Login failed:', error);
+    }
+}
+</script>
