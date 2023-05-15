@@ -71,6 +71,7 @@ export default {
                 { to: '/', name: 'Главная' },
                 { to: '/shops', name: 'Магазины' },
                 { to: '/catalog', name: 'Каталог' },
+                { to: '/history', name: 'История' },
             ],
             links_part2: [
                 { to: '/favourite', name: 'Избранное', icon: 'ph:star' },
