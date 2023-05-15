@@ -1,7 +1,7 @@
 <template>
     <header class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <div class="grid grid-cols-3 grid-flow-col justify-items-center">
+            <div class="grid grid-cols-1 grid-rows-3 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 grid-flow-col justify-items-center">
                 <nav class="flex justify-around items-center">
                     <ul class="flex space-x-4">
                         <li v-for="link of links_part1">
@@ -11,7 +11,7 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="flex items-center border bg-gray-100 rounded-lg px-4 py-1.5 m-2 w-full">
+                <div class="col-span-2 lg:col-span-1 flex items-center border bg-gray-100 rounded-lg px-4 py-1.5 m-2 w-full">
                     <input class="bg-transparent outline-none w-full text-gray-700 leading-tight focus:outline-none"
                         type="text" placeholder="Поиск">
                     <button class="flex-shrink-0 text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 transition-colors duration-200"
@@ -19,7 +19,7 @@
                         <Icon name="ph:magnifying-glass-light" size="1.5em"></Icon>
                     </button>
                 </div>
-                <nav class="flex items-center leading-5">
+                <nav class="flex items-center leading-5 order-first md:order-last">
                     <ul class="flex space-x-4">
                         <li>
                             <button class="flex flex-col items-center text-black hover:text-green-600 transition-colors duration-200">
