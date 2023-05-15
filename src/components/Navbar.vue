@@ -20,7 +20,7 @@
                     </button>
                 </div>
                 <nav class="flex items-center leading-5 order-first md:order-last">
-                    <ul class="flex space-x-4">
+                    <ul :class="`grid grid-cols-${links_part2.length + 1} justify-items-center`">
                         <li>
                             <button class="flex flex-col items-center text-black hover:text-green-600 transition-colors duration-200">
                                 <Icon name="ph:user" size="1.5em" />
