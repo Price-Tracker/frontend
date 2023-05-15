@@ -8,46 +8,55 @@
             </h2>
         </div>
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form class="space-y-6" action="#" method="POST">
+            <form @submit.prevent="signup" class="space-y-4">
                 <div>
-                    <label for="user_name" class="block text-sm font-medium leading-6 text-gray-900">Имя
-                    </label>
+                    <label for="login" class="block text-sm font-medium leading-6 text-gray-900">Логин</label>
                     <div class="mt-2">
-                        <input id="user_name" name="user_name" type="text" autocomplete="text"
+                        <input v-model="login" id="login" name="login" type="text" autocomplete="text" required="true"
                             class="block p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                     </div>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between">
-                        <label for="user_surname" class="block text-sm font-medium leading-6 text-gray-900">Фамилия</label>
-                    </div>
+                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Эл. почта</label>
                     <div class="mt-2">
-                        <input id="user_surname" name="user_surname" type="user_surname" autocomplete="user_surname"
+                        <input v-model="email" id="email" name="email" type="email" autocomplete="email" required="true"
                             class="block p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                     </div>
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Эл. почта
-                    </label>
+                    <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Пароль</label>
                     <div class="mt-2">
-                        <input id="email" name="email" type="email" autocomplete="email"
+                        <input v-model="password" id="password" name="password" type="password" required="true"
                             class="block p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                     </div>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between">
-                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Пароль</label>
-                    </div>
-                    <div class="mt-2">
-                        <input id="password" name="password" type="password" autocomplete="current-password"
-                            class="block p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    </div>
-                </div>
-                <div>
-                    <button type="submit"
-                        class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Зарегистрироваться</button>
+                    <button type="submit" :disabled="isLoading || !isFormValid" :class="{
+                        'bg-indigo-600': isFormValid,
+                        'bg-red-600': !isFormValid,
+                        'hover:bg-indigo-500': isFormValid,
+                        'hover:bg-red-500': !isFormValid,
+                    }"
+                        class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors duration-300">
+                        <span v-if="!isLoading">Зарегистрироваться</span>
+                        <span v-else class="flex items-center">
+                            <svg class="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                                </circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l1-1.647z">
+                                </path>
+                            </svg>
+                            Зарегистрироваться
+                        </span>
+                    </button>
                 </div>
             </form>
+
+            <div v-if="errorMessage" class="bg-red-600 rounded-md p-1 mt-4">
+                <p class="text-center text-white">{{ errorMessage }}</p>
+            </div>
+
             <p class="mt-4 text-center text-sm text-gray-500">
                 Уже есть зарегистрированы?
                 <a href="/signin"
@@ -57,8 +66,57 @@
     </div>
 </template>
 
-<script setup>
-useHead({
-    title: 'Регистрация'
-})
+<script lang="ts">
+export default {
+    setup() {
+        const head = useHead({
+            title: 'Регистрация'
+        })
+
+        const store = useAuthStore()
+        const login = ref('')
+        const email = ref('')
+        const password = ref('')
+        const errorMessage = ref('')
+        const isLoading = ref(false)
+        const router = useRouter()
+
+        const isFormValid = computed(() => {
+            errorMessage.value = ''
+            return login.value.trim() !== '' && email.value.trim() !== '' && password.value.trim() !== ''
+                && login.value.length >= 4 && password.value.length >= 4
+        })
+
+        const signup = async () => {
+            errorMessage.value = ''
+            isLoading.value = true
+
+            try {
+                let result = await store.signup(login.value, email.value, password.value)
+                if (!result) {
+                    errorMessage.value = "Такой пользователь уже существует!"
+                } else {
+                    router.push('/')
+                }
+            } catch (error) {
+                console.error('Register failed:', error)
+                errorMessage.value = 'Произошла неизвестная ошибка! Код: 2'
+            } finally {
+                isLoading.value = false
+            }
+        }
+
+        return {
+            head,
+            store,
+            login,
+            email,
+            password,
+            errorMessage,
+            isLoading,
+            isFormValid,
+            signup
+        }
+    },
+}
 </script>

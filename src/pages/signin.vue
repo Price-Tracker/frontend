@@ -13,18 +13,16 @@
                     <label for="login_or_email" class="block text-sm font-medium leading-6 text-gray-900">Логин или
                         почта</label>
                     <div class="mt-2">
-                        <input v-model="login_or_email" id="login_or_email" name="login_or_email" type="email"
-                            autocomplete="email"
+                        <input v-model="login_or_email" id="login_or_email" name="login_or_email" type="text"
+                            required="true" autocomplete="email"
                             class="block p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                     </div>
                 </div>
 
                 <div>
-                    <div class="flex items-center justify-between">
-                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Пароль</label>
-                    </div>
+                    <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Пароль</label>
                     <div class="mt-2">
-                        <input v-model="password" id="password" name="password" type="password"
+                        <input v-model="password" id="password" name="password" type="password" required="true"
                             autocomplete="current-password"
                             class="block p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                     </div>
@@ -83,6 +81,7 @@ export default {
         const router = useRouter()
 
         const isFormValid = computed(() => {
+            errorMessage.value = ''
             return login_or_email.value.trim() !== '' && password.value.trim() !== ''
                 && login_or_email.value.length >= 4 && password.value.length >= 4
         })

@@ -53,8 +53,29 @@ export const useAuthStore = defineStore({
 
           return true
         }
-      } 
-      
+      }
+
+      return false
+    },
+    async signup(login: string, email: string, password: string) {
+      const runtimeConfig = useRuntimeConfig()
+      const response = await fetch(`${runtimeConfig.public.apiBaseUrl}/user/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ login, email, password })
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+
+        if (data.status === "Signup successfully" || data.status === "success") { // TODO: Remove first condition
+          let res = await this.login(login, password)
+          return res
+        }
+      }
+
       return false
     },
     async refreshAccessToken() {
@@ -84,8 +105,8 @@ export const useAuthStore = defineStore({
 
           return true
         }
-      } 
-      
+      }
+
       console.log("Resetting auth...")
       this.resetAuth()
       return false
