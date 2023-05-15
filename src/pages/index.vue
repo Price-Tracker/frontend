@@ -1,9 +1,10 @@
 <template>
-    <Bestseller />
+    <ProductList />
     <CategoryList />
 </template>
 
 <script setup>
+
 useHead({
     title: 'Главная'
 })
