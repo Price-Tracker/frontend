@@ -35,7 +35,8 @@
                         'bg-red-600': !isFormValid,
                         'hover:bg-indigo-500': isFormValid,
                         'hover:bg-red-500': !isFormValid,
-                    }" class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors duration-300">
+                    }"
+                        class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors duration-300">
                         <span v-if="!isLoading">Войти</span>
                         <span v-else class="flex items-center">
                             <svg class="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
@@ -70,6 +71,10 @@
 <script lang="ts">
 export default {
     setup() {
+        const head = useHead({
+            title: 'Сброс пароля'
+        })
+
         const store = useAuthStore()
         const login_or_email = ref('')
         const password = ref('')
@@ -102,6 +107,7 @@ export default {
         }
 
         return {
+            head,
             store,
             login_or_email,
             password,

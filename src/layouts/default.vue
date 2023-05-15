@@ -9,3 +9,12 @@
         <Copyright />
     </div>
 </template>
+
+<script setup>
+useHead({
+    titleTemplate: (titleChunk) => {
+        const defaultTitle = "PriceTracker"
+        return titleChunk ? `${titleChunk} | ${defaultTitle}` : defaultTitle;
+    },
+});
+</script>

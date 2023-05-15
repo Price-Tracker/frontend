@@ -28,3 +28,9 @@
         </div>
     </div>
 </template>
+
+<script setup>
+useHead({
+    title: 'Сброс пароля'
+})
+</script>
