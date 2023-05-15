@@ -1,5 +1,5 @@
 <template>
-    <NuxtLoadingIndicator />
+    <NuxtLoadingIndicator throttle="1000" />
     <div class="h-screen flex flex-col">
         <Navbar />
         <div class="flex-grow">
