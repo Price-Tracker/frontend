@@ -8,6 +8,11 @@ export default defineNuxtConfig({
         '@pinia-plugin-persistedstate/nuxt',
         'nuxt-icon',
     ],
+    runtimeConfig: {
+        public: {
+            apiBaseUrl: process.env.API_BASE_URL || 'https://infinity.tail1f457.ts.net:10000/api',
+        }
+    },
     pinia: {
         autoImports: ["defineStore"]
     },

@@ -12,9 +12,11 @@
 </template>
 
 <script setup>
+const runtimeConfig = useRuntimeConfig()
+
 const { data: categories } = await useAsyncData(
     'categories',
-    () => $fetch('http://localhost:8080/api/categories'),
+    () => $fetch(`${runtimeConfig.public.apiBaseUrl}/categories`),
     {
         transform: (categories) => categories.data,
     }
