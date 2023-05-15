@@ -1,17 +1,17 @@
 <template>
-    <header class="bg-black">
+    <header class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
             <div class="grid grid-cols-3 justify-items-center">
                 <nav class="flex justify-around items-center">
                     <ul class="flex space-x-4">
                         <li v-for="link of links_part1">
-                            <NuxtLink class="text-white hover:text-gray-300" :to="link.to">
+                            <NuxtLink class="text-black hover:text-green-300" :to="link.to">
                                 {{ link.name }}
                             </NuxtLink>
                         </li>
                     </ul>
                 </nav>
-                <div class="flex items-center bg-gray-100 rounded-full px-4 py-2 m-2">
+                <div class="flex items-center border border-black bg-white rounded-full px-4 py-2 m-2">
                     <input class="bg-transparent outline-none w-full text-gray-700 leading-tight focus:outline-none"
                         type="text" placeholder="Поиск">
                     <button class="flex-shrink-0 text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
@@ -21,8 +21,24 @@
                 </div>
                 <nav class="flex items-center leading-5">
                     <ul class="flex space-x-4">
+                        <li v-for="link of links_part2">
+                            <button class="flex flex-col items-center text-black hover:text-green-300">
+                                <Icon :name="link.icon" size="1.5em" />
+                                <NuxtLink :to="link.to">
+                                    {{ link.name }}
+                                </NuxtLink>
+                            </button>
+                        </li>
+                        <li v-for="link of links_part3">
+                            <button class="flex flex-col items-center text-black hover:text-green-300">
+                                <Icon :name="link.icon" size="1.5em" />
+                                <NuxtLink :to="link.to">
+                                    {{ link.name }}
+                                </NuxtLink>
+                            </button>
+                        </li>
                         <li>
-                            <button class="flex flex-col items-center text-white hover:text-gray-300">
+                            <button class="flex flex-col items-center text-black hover:text-green-300">
                                 <Icon name="ph:user" size="1.5em" />
                                 <NuxtLink v-if="isLoggedIn" to="/account">
                                     {{ username }}
@@ -32,15 +48,6 @@
                                 </NuxtLink>
                             </button>
                         </li>
-                        <li v-for="link of links_part3">
-                            <button class="flex flex-col items-center text-white hover:text-gray-300">
-                                <Icon :name="link.icon" size="1.5em" />
-                                <NuxtLink :to="link.to">
-                                    {{ link.name }}
-                                </NuxtLink>
-                            </button>
-                        </li>
-
                     </ul>
                 </nav>
             </div>
@@ -73,8 +80,11 @@ export default {
                 { to: '/shops', name: 'Магазины' },
                 { to: '/catalog', name: 'Каталог' },
             ],
-            links_part3: [
+            links_part2: [
                 { to: '/favourite', name: 'Избранное', icon: 'ph:star' },
+            ],
+            links_part3: [
+                { to: '/cart', name: 'Корзина', icon: 'ph:shopping-cart' },
             ],
         };
     },
