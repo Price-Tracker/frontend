@@ -11,21 +11,21 @@
     </div>
 </template>
 
-<!-- <script setup>
+<script setup>
 const runtimeConfig = useRuntimeConfig()
 
-const { data: product } = await useAsyncData(
-    'product',
-    () => $fetch(`${runtimeConfig.public.apiBaseUrl}/product`),
+const { data: products } = await useAsyncData(
+    'products',
+    () => $fetch(`${runtimeConfig.public.apiBaseUrl}/products`),
     {
         transform: (product) => product.data,
     }
 )
 
-onMounted(() => refreshNuxtData('product'))
-</script> -->
+onMounted(() => refreshNuxtData('products'))
+</script>
 
-<script setup>
+<!-- <script setup>
 const products = [
   {
     id: 1,
@@ -64,4 +64,4 @@ const products = [
     maxprice: '17',
   },
 ]
-</script>
+</script> -->
