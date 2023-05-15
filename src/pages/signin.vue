@@ -72,7 +72,7 @@
 export default {
     setup() {
         const head = useHead({
-            title: 'Сброс пароля'
+            title: 'Вход'
         })
 
         const store = useAuthStore()
