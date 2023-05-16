@@ -12,7 +12,7 @@
                 </p>
                 <Icon class="hover:text-pink-600 transition-colors duration-200" name="ph:heart-light" size="1.5em" />
             </div>
-            <p class="mt-2 text-black line-clamp-3">{{ product.product.name }}</p>
+            <p class="mt-2 text-black line-clamp-3 break-words">{{ product.product.name }}</p>
         </div>
         <button class="mt-4 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">В корзину</button>
     </div>
