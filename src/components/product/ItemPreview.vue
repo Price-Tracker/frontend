@@ -1,7 +1,7 @@
 <template>
     <div class="p-4 flex flex-col h-full justify-between">
         <div>
-            <img v-if="product.product.picture_url" :src="product.product.picture_url" class="w-full">
+            <img v-if="product.product.picture_url" :src="product.product.picture_url" class="w-full hover:scale-105 transition duration-200">
             <img v-else class="w-full" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
             <div class="mt-4 flex justify-between">
                 <p v-if="product.min_price === product.max_price" class="whitespace-nowrap font-bold text-base text-black">
