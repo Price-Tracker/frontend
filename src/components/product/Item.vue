@@ -1,7 +1,7 @@
 <template>
     <div class="relative pt-4 pb-4 bg-gray-100">
         <img :src="product.product.picture_url" class="h-full w-full">
-        <Icon class="absolute top-0 right-0 hover:text-pink-600 transition-colors duration-200" name="ph:heart-straight-fill" size="2em" />
+        <Icon class="absolute top-0 right-0 m-2 hover:text-pink-600 transition-colors duration-200" name="ph:heart-straight-fill" size="2em" />
         <!-- <Icon class="absolute top-0 right-0 hover:text-pink-600 transition-colors duration-200" name="ph:heart-straight-light" size="2em" /> -->
     </div>
     <div class="p-4 mt-4">
