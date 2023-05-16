@@ -3,48 +3,44 @@
         <div class="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
             <p class="px-4 py-8 text-4xl text-center font-bold text-gray-900 dark:text-white">История</p>
             <!-- <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"> -->
-            <!-- <div class="grid grid-cols-1 gap-8">
-                <div v-for="shop in shops" class="bg-white shadow-md overflow-hidden">
-                    <HistoryItem :shop="shop" />
+            <div class="grid grid-cols-1 gap-8">
+                <div v-for="product_in_history in history" class="bg-white shadow-md overflow-hidden">
+                    <HistoryItem :product_in_history="product_in_history" />
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </template>
 
 <script setup>
-const shops = [
+const history = [
   {
     id: 1,
-    name: 'shop_name',
-    href: '#',
+    product: 'product_name',
     imageSrc: 'https://via.placeholder.com/350x200',
     imageAlt: "text",
-    description: 'some_text_here',
+    date: '14 мая',
   },
   {
     id: 2,
-    name: 'shop_name',
-    href: '#',
+    product: 'product_name',
     imageSrc: 'https://via.placeholder.com/350x200',
     imageAlt: "text",
-    description: 'some_text_here',
+    date: '11 мая',
   },
   {
     id: 3,
-    name: 'shop_name',
-    href: '#',
+    product: 'product_name',
     imageSrc: 'https://via.placeholder.com/350x200',
     imageAlt: "text",
-    description: 'some_text_here',
+    date: '11 мая',
   },
   {
     id: 4,
-    name: 'shop_name',
-    href: '#',
+    product: 'product_name',
     imageSrc: 'https://via.placeholder.com/350x200',
     imageAlt: "text",
-    description: 'some_text_here',
+    date: '12 мая',
   },
 ]
 </script>
