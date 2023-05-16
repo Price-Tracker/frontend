@@ -5,7 +5,7 @@
         <!-- <Icon class="absolute top-0 right-0 hover:text-pink-600 transition-colors duration-200" name="ph:heart-straight-light" size="2em" /> -->
     </div>
     <div class="p-4 mt-4">
-            <p class="mt-1 text-xl text-black md:w-auto">{{ product.product.name }}</p>
+            <p class="mt-1 text-black text-lg md:text-xl lg:text-2xl xl:text-3xl">{{ product.product.name }}</p>
         <p v-if="product.min_price === product.max_price" class="whitespace-nowrap mt-8 font-bold text-center text-base text-black">
             {{ product.min_price }} р.
         </p>

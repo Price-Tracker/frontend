@@ -69,7 +69,6 @@ export default {
         return {
             links_part1: [
                 { to: '/', name: 'Главная' },
-                { to: '/shops', name: 'Магазины' },
                 { to: '/catalog', name: 'Каталог' },
                 { to: '/history', name: 'История' },
             ],
