@@ -1,5 +1,5 @@
 <template>
-    <div class="p-4 flex flex-col h-full">
+    <div class="p-4 flex flex-col h-full justify-between">
         <div>
             <img v-if="product.product.picture_url" :src="product.product.picture_url"
                 class="w-full hover:scale-105 transition duration-200">
