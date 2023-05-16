@@ -8,4 +8,3 @@
 const route = useRoute()
 const categoryId = route.params.id
 </script>
-  

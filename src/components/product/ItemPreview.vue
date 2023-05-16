@@ -1,5 +1,5 @@
 <template>
-    <div class="p-4 flex flex-col h-full justify-between">
+    <div class="p-4 flex flex-col h-full">
         <div>
             <img v-if="product.product.picture_url" :src="product.product.picture_url"
                 class="w-full hover:scale-105 transition duration-200">
@@ -16,8 +16,11 @@
             </div>
             <p class="mt-2 text-black line-clamp-3 break-words">{{ product.product.name }}</p>
         </div>
-        <button class="mt-4 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">{{
-            product.prices.length }} {{ offerString }}</button>
+        <NuxtLink :to="'/product/' + product.product.id">
+            <button class="w-full mt-4 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">
+                {{ product.prices.length }} {{ offerString }}
+            </button>
+        </NuxtLink>
     </div>
 </template>
 
