@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white">
         <div class="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-            <p v-if="!props.categoryId" class="px-4 py-8 text-4xl text-center font-bold text-gray-900 dark:text-white">Хит продаж!</p>
+            <p v-if="!props.categoryId" class="px-4 py-8 text-4xl font-bold text-gray-900 dark:text-white">Популярные товары</p>
             <div v-if="loading" class="px-4 py-8 text-4xl text-center font-bold text-gray-900 dark:text-white">Загрузка...</div>
             <div v-else-if="products.length === 0" class="px-4 py-8 text-4xl text-center font-bold text-gray-900 dark:text-white">Нет продуктов по текущим критериям!</div>
             <div v-else class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
