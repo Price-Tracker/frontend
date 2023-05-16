@@ -21,6 +21,4 @@ const { data: categories } = await useAsyncData(
         transform: (categories) => categories.data,
     }
 )
-
-onMounted(() => refreshNuxtData('categories'))
 </script>
