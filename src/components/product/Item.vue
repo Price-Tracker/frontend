@@ -1,17 +1,20 @@
 <template>
-    <div class="relative pt-4 pb-4 bg-gray-100">
-        <img :src="product.product.picture_url" class="h-full w-full">
-        <Icon class="absolute top-0 right-0 m-2 hover:text-pink-600 transition-colors duration-200" name="ph:heart-straight-fill" size="2em" />
-        <!-- <Icon class="absolute top-0 right-0 hover:text-pink-600 transition-colors duration-200" name="ph:heart-straight-light" size="2em" /> -->
-    </div>
-    <div class="p-4 mt-4">
-            <p class="mt-1 text-black text-lg">{{ product.product.name }}</p>
-        <p v-if="product.min_price === product.max_price" class="whitespace-nowrap mt-8 font-bold text-center text-base text-black">
-            {{ product.min_price }} р.
-        </p>
-        <p v-else class="mt-8 font-bold text-center text-base text-black">
-            {{ product.min_price }} — {{ product.max_price }} р.
-        </p>
+    <div class="p-4 flex flex-col h-full justify-between">
+        <div>
+            <img v-if="product.product.picture_url" :src="product.product.picture_url" class="w-full">
+            <img v-else class="w-full" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+            <div class="mt-4 flex justify-between">
+                <p v-if="product.min_price === product.max_price" class="whitespace-nowrap font-bold text-base text-black">
+                    {{ product.min_price }} р.
+                </p>
+                <p v-else class="font-bold text-base text-black">
+                    {{ product.min_price }} — {{ product.max_price }} р.
+                </p>
+                <Icon class="hover:text-pink-600 transition-colors duration-200" name="ph:heart-light" size="1.5em" />
+            </div>
+            <p class="mt-2 text-black line-clamp-3">{{ product.product.name }}</p>
+        </div>
+        <button class="mt-4 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">В корзину</button>
     </div>
 </template>
 
