@@ -65,13 +65,13 @@ const { data: product, loading } = await useAsyncData(
     }
 )
 
-const { postWithoutData: post } = useAuthFetch()
+const { post } = useAuthFetch()
 
 onMounted(async () => {
     const authStore = useAuthStore()
 
     if (authStore.accessToken) {
-        let result = await post(`${runtimeConfig.public.apiBaseUrl}/history/product/${props.productId}`)
+        let result = await post(`${runtimeConfig.public.apiBaseUrl}/history`, { product_id: props.productId })
 
         console.log(result.data)
     }

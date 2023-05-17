@@ -27,15 +27,16 @@ export default function useAuthenticatedFetch() {
     })
   }
 
-  async function postWithoutData(url) {
+  async function post(url, body = {}) {
     const response = await authenticatedFetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify(body)
     });
     return response;
   }
 
-  return { authFetch: authenticatedFetch, postWithoutData };
+  return { authFetch: authenticatedFetch, post };
 }
