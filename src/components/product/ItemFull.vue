@@ -10,7 +10,11 @@
                 </div>
 
                 <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ product.product.name }}</h1>
+                    <div class="flex items-center">
+                        <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ product.product.name }}</h1>
+                        <Icon class="ml-3 hover:text-pink-600 transition-colors duration-200" name="ph:heart-light"
+                            size="2em" />
+                    </div>
                     <div class="flex mb-4">
                         <span class="flex items-center">
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -46,7 +50,7 @@
                             <span class="text-gray-600 ml-3">here reviews count {{}}</span>
                         </span>
                     </div>
-                    <p class="leading-relaxed">here product description {{ product.description }}</p>
+                    <p v-if="product.product.description" class="leading-relaxed">{{ product.product.description }}</p>
                     <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                     </div>
                     <div class="flex items-center">
@@ -61,8 +65,6 @@
                         <button
                             class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">В
                             корзину</button>
-                        <Icon class="ml-3 hover:text-pink-600 transition-colors duration-200" name="ph:heart-light"
-                            size="1.5em" />
                     </div>
                 </div>
             </div>
