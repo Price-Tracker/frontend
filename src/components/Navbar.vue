@@ -5,7 +5,7 @@
                 <nav class="flex justify-around items-center">
                     <ul class="flex space-x-4">
                         <li v-for="link of links_part1">
-                            <NuxtLink class="text-black hover:text-green-600 transition-colors duration-200" :to="link.to">
+                            <NuxtLink class="text-xl text-black hover:text-green-600 transition-colors duration-200" :to="link.to">
                                 {{ link.name }}
                             </NuxtLink>
                         </li>
@@ -19,7 +19,7 @@
                         <Icon name="ph:magnifying-glass-light" size="1.5em"></Icon>
                     </button>
                 </div>
-                <nav class="flex items-center leading-5 order-first md:order-last">
+                <nav class="text-lg flex items-center leading-5 order-first md:order-last">
                     <ul class="grid grid-cols-3 justify-items-center">
                         <li>
                             <button class="flex flex-col items-center text-black hover:text-green-600 transition-colors duration-200">

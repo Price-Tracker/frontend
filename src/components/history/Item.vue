@@ -1,12 +1,9 @@
 <template>
-    <div class="mt-4 mb-4 flex justify-between gap-x-4">
-        <img class="px-4 py-4 h-40 w-40 flex-none rounded-full" src="https://via.placeholder.com/350x200" alt="" hover:bg-red-600/>
+    <div class="mt-4 mb-4 flex gap-x-4">
+        <img class="px-4 py-4 h-40 w-40 flex-none rounded-full" src="https://via.placeholder.com/350x200" alt="" />
         <div class="place-self-center">
             <p class="text-xl font-semibold leading-6 text-gray-900">{{ product_in_history.product }}</p>
-            <p class="mt-2 truncate text-lg leading-5 text-gray-500">{{ product_in_history.date }}</p>
-        </div>
-        <div class="px-4 py-2">
-            <Icon name="ph:x" size="1.5em"></Icon>
+            <p class="text-left mt-2 truncate text-lg leading-5 text-gray-500">{{ product_in_history.date }}</p>
         </div>
     </div>
 

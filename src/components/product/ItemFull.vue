@@ -1,54 +1,73 @@
 <template>
-    <div class="flex justify-center w-full">
-        <div v-if="loading">
-            Загрузка...
-        </div>
-        <div v-else class="m-2 flex justify-evenly w-full">
-            <div class="flex flex-col items-center">
-                <div class="flex items-center mb-8">
-                    <p class="text-2xl font-bold line-clamp-3 break-words">{{ product.product.name }}</p>
-                    <Icon class="ml-3 hover:text-pink-600 transition-colors duration-200" name="ph:heart-light"
-                        size="1.5em" />
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                <div class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded">
+                    <img v-if="product.product.picture_url" :src="product.product.picture_url"
+                        class="w-full max-w-sm hover:scale-105 transition duration-200">
+                    <img v-else class="w-full max-w-sm"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
                 </div>
-                <img v-if="product.product.picture_url" :src="product.product.picture_url"
-                    class="w-full max-w-sm hover:scale-105 transition duration-200">
-                <img v-else class="w-full max-w-sm"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
-                <div class="mt-4 flex">
-                </div>
-            </div>
-            <div>
-                <!-- actionbar -->
 
-
-                <!-- store info -->
-                <div class="flex flex-col h-full">
-                    <!-- <div class="p-4 shadow-md rounded">
-                        <p v-if="product.min_price === product.max_price"
-                            class="whitespace-nowrap font-bold text-lg text-center">
-                            {{ product.min_price }} р.
-                        </p>
-                        <p v-else class="font-bold text-lg text-center">
-                            {{ product.min_price }} — {{ product.max_price }} р.
-                        </p>
-                    </div> -->
-                    <div class="flex flex-col justify-around">
-                        <div class="p-4 flex flex-col shadow-md">
-                            <!-- <span class="font-bold text-xl">Магазины:</span> -->
-                            <div v-for="store in product.prices" class="flex justify-between font-bold text-xl">
-                                <span class="m-2">
-                                    {{ store.price }} р.
-                                </span>
-                                <span class="m-2">
-                                    {{ store.store_name }}
-                                </span>
-                            </div>
+                <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ product.product.name }}</h1>
+                    <div class="flex mb-4">
+                        <span class="flex items-center">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                </path>
+                            </svg>
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                </path>
+                            </svg>
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                </path>
+                            </svg>
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                </path>
+                            </svg>
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                </path>
+                            </svg>
+                            <span class="text-gray-600 ml-3">here reviews count {{}}</span>
+                        </span>
+                    </div>
+                    <p class="leading-relaxed">here product description {{ product.description }}</p>
+                    <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+                    </div>
+                    <div class="flex items-center">
+                        <div v-for="store in product.prices" class="title-font font-medium text-2xl text-gray-900">
+                            <span class="m-2">
+                                {{ store.price }} р.
+                            </span>
+                            <span class="m-2">
+                                {{ store.store_name }}
+                            </span>
                         </div>
+                        <button
+                            class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">В
+                            корзину</button>
+                        <Icon class="ml-3 hover:text-pink-600 transition-colors duration-200" name="ph:heart-light"
+                            size="1.5em" />
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup>
