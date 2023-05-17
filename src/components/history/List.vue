@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white">
         <div class="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-            <p class="px-4 py-8 text-4xl text-center font-bold text-gray-900 dark:text-white">История</p>
+            <p class="px-4 py-8 text-4xl text-center font-bold text-gray-900">История</p>
             <div class="grid grid-cols-1 gap-8">
                 <div v-for="product_in_history in history" class="bg-white shadow-md overflow-hidden">
                     <HistoryItem :product_in_history="product_in_history" />
