@@ -7,7 +7,8 @@
             <div class="flex flex-col items-center">
                 <div class="flex items-center mb-8">
                     <p class="text-2xl font-bold line-clamp-3 break-words">{{ product.product.name }}</p>
-                    <Icon class="ml-3 hover:text-pink-600 transition-colors duration-200" name="ph:heart-light" size="1.5em" />
+                    <Icon class="ml-3 hover:text-pink-600 transition-colors duration-200" name="ph:heart-light"
+                        size="1.5em" />
                 </div>
                 <img v-if="product.product.picture_url" :src="product.product.picture_url"
                     class="w-full max-w-sm hover:scale-105 transition duration-200">
@@ -63,4 +64,18 @@ const { data: product, loading } = await useAsyncData(
         transform: (product) => product.data,
     }
 )
+
+const { postWithoutData: post } = useAuthFetch()
+
+onMounted(async () => {
+    const authStore = useAuthStore()
+
+    if (authStore.accessToken) {
+        let result = await post(`${runtimeConfig.public.apiBaseUrl}/history/product/${props.productId}`)
+
+        console.log(result.data)
+    }
+})
+
+
 </script>

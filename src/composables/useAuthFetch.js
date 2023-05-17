@@ -2,25 +2,40 @@ export default function useAuthenticatedFetch() {
   const authStore = useAuthStore();
   const router = useRouter()
 
-  async function authenticatedFetch(url, options = {}) {
+  async function onRequest(ctx) {
     if (authStore.accessToken) {
-      const tokenExpiration = parseJwt(authStore.accessToken).exp - 5; // Just to be sure when doing a request
-      const currentTime = Math.floor(Date.now() / 1000);
+      const tokenExpiration = parseJwt(authStore.accessToken).exp - 5
+      const currentTime = Math.floor(Date.now() / 1000)
 
       if (currentTime > tokenExpiration) {
-        const success = await authStore.refreshAccessToken();
+        const success = await authStore.refreshAccessToken()
         if (!success) {
-          router.push("/signin");
-          return;
+          router.push('/signin')
+          return
         }
       }
 
-      options.headers = options.headers || {};
-      options.headers.Authorization = authStore.accessToken;
+      ctx.options.headers = ctx.options.headers || {}
+      ctx.options.headers.Authorization = authStore.accessToken
     }
-
-    return await fetch(url, options);
   }
 
-  return { authFetch: authenticatedFetch };
+  async function authenticatedFetch(url, options = {}) {
+    return useFetch(url, {
+      ...options,
+      onRequest,
+    })
+  }
+
+  async function postWithoutData(url) {
+    const response = await authenticatedFetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    return response;
+  }
+
+  return { authFetch: authenticatedFetch, postWithoutData };
 }
