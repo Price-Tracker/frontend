@@ -27,6 +27,16 @@ export default function useAuthenticatedFetch() {
     })
   }
 
+  async function get(url) {
+    const response = await authenticatedFetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    return response;
+  }
+
   async function post(url, body = {}) {
     const response = await authenticatedFetch(url, {
       method: 'POST',
@@ -38,5 +48,16 @@ export default function useAuthenticatedFetch() {
     return response;
   }
 
-  return { authFetch: authenticatedFetch, post };
+  async function put(url, body = {}) {
+    const response = await authenticatedFetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    });
+    return response;
+  }
+
+  return { authFetch: authenticatedFetch, get, post, put };
 }
