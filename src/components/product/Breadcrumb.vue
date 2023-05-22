@@ -1,5 +1,5 @@
 <template>
-    <nav aria-label="breadcrumb" class="px-40 py-8 w-full p-4 bg-gray-50 text-gray-800">
+    <nav aria-label="breadcrumb" class="px-8 py-8 w-full p-4 bg-gray-50 text-gray-800">
         <ol class="flex h-2 space-x-2">
             <li class="flex items-center">
                 <a rel="noopener noreferrer" href="#" title="Back to homepage" class="hover:underline">

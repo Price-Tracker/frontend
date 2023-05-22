@@ -3,7 +3,7 @@
         Загрузка...
     </div>
     <section v-else class="text-gray-600 body-font overflow-hidden">
-        <Breadcrumb />
+        <ProductBreadcrumb />
         <div class="container px-5 py-24 mx-auto">
             <div class="lg:w-4/5 mx-auto flex flex-wrap">
                 <div class="flex flex-col items-center">
@@ -77,7 +77,6 @@
 </template>
 
 <script setup>
-import Breadcrumb from './breadcrumb.vue';
 
 const props = defineProps({
     productId: { type: Number, required: true },
