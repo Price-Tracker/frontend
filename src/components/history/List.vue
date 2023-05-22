@@ -12,6 +12,18 @@
 </template>
 
 <script setup>
+const runtimeConfig = useRuntimeConfig()
+
+const { data: history } = await useAsyncData(
+    'history',
+    () => $fetch(`${runtimeConfig.public.apiBaseUrl}/history`),
+    {
+        transform: (history) => history.data,
+    }
+)
+</script>
+
+<!-- <script setup>
 const history = [
   {
     id: 1,
@@ -42,4 +54,4 @@ const history = [
     date: '12 мая',
   },
 ]
-</script>
+</script> -->

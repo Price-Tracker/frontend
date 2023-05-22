@@ -1,5 +1,8 @@
 <template>
-    <div class="relative">     
+    <div v-if="loading">
+        Загрузка...
+    </div>
+    <div class="relative">
         <div class="mt-4 mb-4 flex gap-x-4">
             <img class="px-4 py-4 h-40 w-40 flex-none rounded-full" src="https://via.placeholder.com/350x200" alt="" />
             <div class="place-self-center">
