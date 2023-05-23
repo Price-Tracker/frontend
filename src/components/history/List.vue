@@ -13,13 +13,6 @@
 </template>
 
 <script setup>
-
-import moment from 'moment'; 
-
-const serverTime = moment('2023-05-23T12:00:00Z');
-const userTime = serverTime.local();
-const formattedTime = userTime.format('MMMM Do YYYY, h:mm:ss a');
-
 const runtimeConfig = useRuntimeConfig()
 
 const { authRequest } = useAuthFetch()

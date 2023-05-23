@@ -10,7 +10,7 @@
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
             <div class="place-self-center">
                 <p class="text-xl font-semibold leading-6 text-gray-900">{{ historyItem.product.name }}</p>
-                <p class="text-left mt-2 truncate text-lg leading-5 text-gray-500">{{ historyItem.access_date }}</p>
+                <p class="text-left mt-2 truncate text-lg leading-5 text-gray-500">{{ formattedTime }}</p>
             </div>
         </div>
         <button class="absolute top-1 right-2 h-8 w-8 rounded-full hover:bg-gray-300 focus:outline-none">
@@ -19,13 +19,14 @@
     </div>
 </template>
 
-<script>
-export default {
-    props: {
-        historyItem: {
-            type: Object,
-            required: true,
-        },
-    }
-};
+<script setup>
+import moment from 'moment';
+
+const props = defineProps({
+    historyItem: { type: Object, required: true },
+})
+
+const serverTime = moment.utc(props.historyItem.access_date);
+const userTime = serverTime;
+const formattedTime = userTime.local().format("DD.MM.YYYY HH:mm");
 </script>
