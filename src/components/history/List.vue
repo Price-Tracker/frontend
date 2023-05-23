@@ -13,6 +13,13 @@
 </template>
 
 <script setup>
+
+import moment from 'moment'; 
+
+const serverTime = moment('2023-05-23T12:00:00Z');
+const userTime = serverTime.local();
+const formattedTime = userTime.format('MMMM Do YYYY, h:mm:ss a');
+
 const runtimeConfig = useRuntimeConfig()
 
 const { authRequest } = useAuthFetch()
@@ -29,36 +36,3 @@ const { data: history, loading } = await useAsyncData(
     }
 )
 </script>
-
-<!-- <script setup>
-const history = [
-  {
-    id: 1,
-    product: 'product_name',
-    imageSrc: 'https://via.placeholder.com/350x200',
-    imageAlt: "text",
-    date: '14 мая',
-  },
-  {
-    id: 2,
-    product: 'product_name',
-    imageSrc: 'https://via.placeholder.com/350x200',
-    imageAlt: "text",
-    date: '11 мая',
-  },
-  {
-    id: 3,
-    product: 'product_name',
-    imageSrc: 'https://via.placeholder.com/350x200',
-    imageAlt: "text",
-    date: '11 мая',
-  },
-  {
-    id: 4,
-    product: 'product_name',
-    imageSrc: 'https://via.placeholder.com/350x200',
-    imageAlt: "text",
-    date: '12 мая',
-  },
-]
-</script> -->

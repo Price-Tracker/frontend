@@ -16,14 +16,14 @@
                     class="w-2 h-2 mt-1 transform rotate-90 fill-current text-gray-400">
                     <path d="M32 30.031h-32l16-28.061z"></path>
                 </svg>
-                <a rel="noopener noreferrer" href="#" class="flex items-center px-1 capitalize hover:underline">Parent</a>
+                <a rel="noopener noreferrer" href="#" class="flex items-center px-1 capitalize hover:underline">Домашний</a>
             </li>
             <li class="flex items-center space-x-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"
                     class="w-2 h-2 mt-1 transform rotate-90 fill-current text-gray-400">
                     <path d="M32 30.031h-32l16-28.061z"></path>
                 </svg>
-                <a rel="noopener noreferrer" href="#" class="flex items-center px-1 capitalize hover:underline">Parent</a>
+                <a rel="noopener noreferrer" href="#" class="flex items-center px-1 capitalize hover:underline">Домашний</a>
             </li>
             <li class="flex items-center space-x-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"
@@ -31,7 +31,7 @@
                     <path d="M32 30.031h-32l16-28.061z"></path>
                 </svg>
                 <a rel="noopener noreferrer" href="#"
-                    class="flex items-center px-1 capitalize hover:underline hover:no-underline cursor-default">Current</a>
+                    class="flex items-center px-1 capitalize hover:underline hover:no-underline cursor-default">Текущий</a>
             </li>
         </ol>
     </nav>
