@@ -1,15 +1,23 @@
 <template>
-    <div class="flex flex-col">
-      <div class="flex items-center justify-between bg-gray-200 py-4 px-6 rounded-t-lg">
-        <h2 class="text-lg font-bold">Your Cart</h2>
-        <button class="text-gray-700 hover:text-gray-900">
-          <svg class="h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 8a1 1 0 011 1v5a1 1 0 11-2 0V9a1 1 0 011-1zm-4 3a1 1 0 112 0v2a1 1 0 11-2 0v-2zm8 0a1 1 0 112 0v2a1 1 0 11-2 0v-2z"/></svg>
-          <span class="sr-only">Close Cart</span>
-        </button>
-      </div>
-      <div class="bg-white py-4 px-6 rounded-b-lg">
-        <p>Your cart is empty.</p>
-      </div>
+  <div class="bg-white">
+    <div class="mx-auto max-w-2xl px-4 pt-16 pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Корзина</h1>
+      <form class="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
+        <CartItem />
+        <section aria-labelledby="summary-heading"
+          class="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
+          <h2 id="summary-heading" class="text-lg font-medium text-gray-900">Итоговая стоимость</h2>
+          <dl class="mt-6 space-y-4">
+            <div class="flex items-center justify-between border-t border-gray-200 pt-4">
+              <dd class="text-base font-medium text-gray-900">{cart.price} {{  }}</dd>
+            </div>
+          </dl>
+          <!-- <div class="mt-6">
+            <button type="submit"
+              class="w-full rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">Путь</button>
+          </div> -->
+        </section>
+      </form>
     </div>
-  </template>
-  
+  </div>
+</template>
