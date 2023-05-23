@@ -15,43 +15,11 @@
                 <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                     <div class="flex justify-between">
                         <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ product.product.name }}</h1>
-                        <Icon class="hover:text-pink-600 transition-colors duration-200" name="ph:heart-light"
-                            size="2.5em" />
-                    </div>
-                    <div class="flex mb-4">
-                        <span class="flex items-center">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                </path>
-                            </svg>
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                </path>
-                            </svg>
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                </path>
-                            </svg>
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                </path>
-                            </svg>
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                </path>
-                            </svg>
-                            <span class="text-gray-600 ml-3">here reviews count {{}}</span>
-                        </span>
+                        <button type="button"
+                            class="ml-4 flex items-center justify-center rounded-md py-3 px-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500">
+                            <Icon name="ph:heart-light" class="h-8 w-8 flex-shrink-0" aria-hidden="true" />
+                            <span class="sr-only">Add to favorites</span>
+                        </button>
                     </div>
                     <p v-if="product.product.description" class="leading-relaxed">{{ product.product.description }}</p>
                     <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
@@ -74,10 +42,10 @@
             </div>
         </div>
     </section>
+    <ProductUsersReviews />
 </template>
 
 <script setup>
-
 const props = defineProps({
     productId: { type: Number, required: true },
 })
