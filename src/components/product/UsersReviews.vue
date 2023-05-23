@@ -70,7 +70,6 @@
                                     <p class="sr-only">{{ review.rating }} out of 5 stars</p>
                                 </div>
                             </div>
-
                             <div class="mt-4 space-y-6 text-base italic text-gray-600" v-html="review.content" />
                         </div>
                     </div>
@@ -83,13 +82,13 @@
 <script setup>
 const reviews = {
     average: 4,
-    totalCount: 666,
+    totalCount: 54,
     counts: [
-      { rating: 5, count: 285 },
-      { rating: 4, count: 197 },
-      { rating: 3, count: 116 },
-      { rating: 2, count: 52 },
-      { rating: 1, count: 16 },
+      { rating: 5, count: 24 },
+      { rating: 4, count: 15 },
+      { rating: 3, count: 5 },
+      { rating: 2, count: 6 },
+      { rating: 1, count: 4 },
     ],
     featured: [
       {
