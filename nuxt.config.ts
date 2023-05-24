@@ -8,6 +8,7 @@ export default defineNuxtConfig({
         '@pinia-plugin-persistedstate/nuxt',
         'nuxt-icon',
     ],
+    ssr: false,
     runtimeConfig: {
         public: {
             apiBaseUrl: process.env.API_BASE_URL || 'https://elxreno.me/api',
