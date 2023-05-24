@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     ],
     runtimeConfig: {
         public: {
-            apiBaseUrl: process.env.API_BASE_URL || 'https://akina.tail1f457.ts.net:10000/api',
+            apiBaseUrl: process.env.API_BASE_URL || 'https://elxreno.me/api',
         }
     },
     pinia: {
