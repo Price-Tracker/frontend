@@ -19,9 +19,10 @@ WORKDIR /app
 
 COPY --from=builder /app .
 
+ENV API_BASE_URL https://elxreno.me/api
 ENV HOST 0.0.0.0
-ENV PORT=80
-ENV NODE_ENV=production
+ENV PORT 80
+ENV NODE_ENV production
 
 EXPOSE 80
 
