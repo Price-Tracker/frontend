@@ -1,4 +1,4 @@
-FROM node:lts as builder
+FROM node:lts-alpine as builder
 
 WORKDIR /app
 
@@ -13,11 +13,11 @@ COPY . .
 
 RUN npx nuxt build
 
-FROM node:lts
+FROM node:lts-alpine
 
 WORKDIR /app
 
-COPY --from=builder /app .
+COPY --from=builder /app/.output .
 
 ENV API_BASE_URL https://elxreno.me/api
 ENV HOST 0.0.0.0
@@ -26,4 +26,4 @@ ENV NODE_ENV production
 
 EXPOSE 80
 
-CMD ["npx", "nuxt", "start"]
+CMD ["node", "server/index.mjs"]
