@@ -17,6 +17,8 @@ FROM node:lts-alpine
 
 WORKDIR /app
 
+RUN apk --no-cache add dumb-init
+
 COPY --from=builder /app/.output .
 
 ENV API_BASE_URL https://elxreno.me/api
@@ -26,4 +28,4 @@ ENV NODE_ENV production
 
 EXPOSE 80
 
-CMD ["node", "server/index.mjs"]
+CMD ["dumb-init", "node", "server/index.mjs"]
