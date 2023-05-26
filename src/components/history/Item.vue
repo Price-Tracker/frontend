@@ -13,9 +13,9 @@
                 <p class="text-left mt-2 truncate text-lg leading-5 text-gray-500">{{ formattedTime }}</p>
             </div>
         </div>
-        <button class="absolute top-1 right-2 h-8 w-8 rounded-full hover:bg-gray-300 focus:outline-none">
+        <!-- <button class="absolute top-1 right-2 h-8 w-8 rounded-full hover:bg-gray-300 focus:outline-none">
             <Icon name="ph:x" class="absolute top-0 right-0 h-8 w-8" size="1.5em"></Icon>
-        </button>
+        </button> -->
     </div>
 </template>
 
