@@ -52,6 +52,8 @@ const props = defineProps({
 })
 
 const runtimeConfig = useRuntimeConfig()
+const authStore = useAuthStore()
+
 const { data: product, loading } = await useAsyncData(
     'product',
     () => $fetch(`${runtimeConfig.public.apiBaseUrl}/product/${props.productId}`),
@@ -63,16 +65,12 @@ const { data: product, loading } = await useAsyncData(
 const { post, put } = useAuthFetch()
 
 onMounted(async () => {
-    const authStore = useAuthStore()
-
     if (authStore.accessToken) {
         await post(`${runtimeConfig.public.apiBaseUrl}/history`, { product_id: props.productId })
     }
 })
 
 const addToCart = async (productId, storeId) => {
-    const authStore = useAuthStore()
-
     if (authStore.accessToken) {
         await put(`${runtimeConfig.public.apiBaseUrl}/cart/add`, { product_id: productId, store_id: storeId })
     }
