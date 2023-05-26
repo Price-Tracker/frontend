@@ -38,5 +38,16 @@ export default function useAuthenticatedFetch() {
     return response;
   }
 
-  return { authRequest: onRequest, authFetch: authenticatedFetch, post };
+  async function put(url, body = {}) {
+    const response = await authenticatedFetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    });
+    return response;
+  }
+
+  return { authRequest: onRequest, authFetch: authenticatedFetch, post, put };
 }

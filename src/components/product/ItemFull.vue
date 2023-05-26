@@ -26,17 +26,18 @@
                     </div>
                     <div class="flex items-center">
                         <div v-for="store in product.prices"
-                            class="title-font font-medium text-base md:text-xl lg:text-xl xl:text-2xl text-gray-900">
+                            class="title-font font-medium text-base md:text-xl lg:text-xl xl:text-2xl text-gray-900 flex justify-between w-full">
                             <span class="m-2">
                                 {{ store.price }} р.
                             </span>
                             <span class="m-2">
                                 {{ store.store_name }}
                             </span>
+
+                            <button @click="addToCart(product.product.id, store.store_id)"
+                                class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">В
+                                корзину</button>
                         </div>
-                        <button
-                            class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">В
-                            корзину</button>
                     </div>
                 </div>
             </div>
@@ -59,15 +60,21 @@ const { data: product, loading } = await useAsyncData(
     }
 )
 
-const { post } = useAuthFetch()
+const { post, put } = useAuthFetch()
 
 onMounted(async () => {
     const authStore = useAuthStore()
 
     if (authStore.accessToken) {
-        let result = await post(`${runtimeConfig.public.apiBaseUrl}/history`, { product_id: props.productId })
-
-        console.log(result.data)
+        await post(`${runtimeConfig.public.apiBaseUrl}/history`, { product_id: props.productId })
     }
 })
+
+const addToCart = async (productId, storeId) => {
+    const authStore = useAuthStore()
+
+    if (authStore.accessToken) {
+        await put(`${runtimeConfig.public.apiBaseUrl}/cart/add`, { product_id: productId, store_id: storeId })
+    }
+}
 </script>
