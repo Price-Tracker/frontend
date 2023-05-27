@@ -1,7 +1,9 @@
 import UserRepository from "~/repository/userRepository";
+import ProductRepository from "~/repository/productRepository";
 
 interface IApiInstance {
     user: UserRepository;
+    product: ProductRepository;
 }
 
 export default defineNuxtPlugin(nuxtApp => {
@@ -13,6 +15,7 @@ export default defineNuxtPlugin(nuxtApp => {
 
     const modules: IApiInstance = {
         user: new UserRepository(apiFetcher),
+        product: new ProductRepository(apiFetcher),
     };
 
     return {

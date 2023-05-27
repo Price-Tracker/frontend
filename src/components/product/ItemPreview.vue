@@ -24,27 +24,19 @@
     </div>
 </template>
 
-<script>
-export default {
-    props: {
-        product: {
-            type: Object,
-            required: true,
-        },
-    },
-    computed: {
-        offerString() {
-            let offerCount = this.product.prices.length
-            let offerString = 'предложение'
-            if (offerCount >= 5) {
-                offerString = 'предложений'
-            } else if (offerCount >= 2) {
-                offerString = 'предложения'
-            }
-            return offerString
-        }
-    }
-};
-</script>
+<script setup>
+const props = defineProps({
+    product: { type: Object, required: true },
+})
 
-<!-- имя слева минимальная цена через дефис справа максимальная и описание -->
+const offerString = computed(() => {
+    let offerCount = props.product.prices.length
+    let offerString = 'предложение'
+    if (offerCount >= 5) {
+        offerString = 'предложений'
+    } else if (offerCount >= 2) {
+        offerString = 'предложения'
+    }
+    return offerString
+})
+</script>

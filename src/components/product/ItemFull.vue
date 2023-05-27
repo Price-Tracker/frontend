@@ -53,14 +53,9 @@ const props = defineProps({
 
 const runtimeConfig = useRuntimeConfig()
 const authStore = useAuthStore()
+const { $api } = useNuxtApp()
 
-const { data: product, loading } = await useAsyncData(
-    'product',
-    () => $fetch(`${runtimeConfig.public.apiBaseUrl}/product/${props.productId}`),
-    {
-        transform: (product) => product.data,
-    }
-)
+const product = await $api.product.getProductById(props.productId).then((res) => res.data)
 
 const { post, put } = useAuthFetch()
 
