@@ -12,12 +12,17 @@
                 <p v-else class="font-bold text-base text-black">
                     {{ product.min_price }} — {{ product.max_price }} р.
                 </p>
-                <Icon class="hover:text-pink-600 transition-colors duration-200" name="ph:heart-light" size="1.5em" />
+                <button @click="toggleSubscribe(product.product.id)" class="focus:outline-none">
+                    <Icon v-if="isSubscribed" class="text-pink-600" name="ph:heart-light" size="1.5em" />
+                    <Icon v-else class="hover:text-pink-600 transition-colors duration-200" name="ph:heart-light"
+                        size="1.5em" />
+                </button>
             </div>
             <p class="mt-2 text-black line-clamp-3 break-words">{{ product.product.name }}</p>
         </div>
         <NuxtLink :to="'/product/' + product.product.id">
-            <button class="w-full mt-4 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">
+            <button
+                class="w-full mt-4 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">
                 {{ product.prices.length }} {{ offerString }}
             </button>
         </NuxtLink>
@@ -29,6 +34,9 @@ const props = defineProps({
     product: { type: Object, required: true },
 })
 
+const authStore = useAuthStore()
+const { $api } = useNuxtApp()
+
 const offerString = computed(() => {
     let offerCount = props.product.prices.length
     let offerString = 'предложение'
@@ -39,4 +47,38 @@ const offerString = computed(() => {
     }
     return offerString
 })
+
+const isSubscribed = computed(async () => {
+    if (!authStore.isUserAuthenticated()) {
+        return false
+    }
+
+    let subscribeInfo = await $api.product.subscribeInfo(props.product.product.id).then(res => res.data)
+    return subscribeInfo.subscribed
+})
+
+const toggleSubscribe = async (productId) => {
+    if (authStore.isUserAuthenticated()) {
+        if (!isSubscribed) {
+            try {
+                await $api.product.subscribeProduct(productId)
+                isSubscribed.value = true
+                alert('Вы успешно подписались на уведомления о снижении цены')
+            } catch (e) {
+                alert('Произошла ошибка при подписке на уведомления')
+                console.error(e)
+            }
+        } else {
+            try {
+                await $api.product.unsubscribeProduct(productId)
+                isSubscribed.value = false
+                alert('Вы успешно отписались от уведомлений о снижении цены')
+            } catch (e) {
+                alert('Произошла ошибка при отписке от уведомлений')
+                console.error(e)
+            }
+        }
+    }
+}
+
 </script>

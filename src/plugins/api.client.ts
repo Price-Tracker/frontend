@@ -26,7 +26,7 @@ export default defineNuxtPlugin(nuxtApp => {
 
     const modules: IApiInstance = {
         user: new UserRepository(apiFetcher),
-        product: new ProductRepository(apiFetcher),
+        product: new ProductRepository(apiFetcher, apiAuthFetcher),
         history: new HistoryRepository(apiAuthFetcher),
         cart: new CartRepository(apiAuthFetcher),
     };
