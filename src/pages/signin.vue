@@ -74,6 +74,7 @@ export default {
         })
 
         const store = useAuthStore()
+        const { $api } = useNuxtApp()
         const login_or_email = ref('')
         const password = ref('')
         const errorMessage = ref('')
@@ -91,10 +92,11 @@ export default {
             isLoading.value = true
 
             try {
-                let result = await store.login(login_or_email.value, password.value)
+                let result = await $api.user.login(login_or_email.value, password.value)
                 if (!result) {
                     errorMessage.value = "Неправильный логин, почта, или пароль!"
                 } else {
+                    store.saveUserTokens(result.data.access_token, result.data.refresh_token)
                     router.push('/')
                 }
             } catch (error) {

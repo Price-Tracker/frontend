@@ -26,57 +26,17 @@ export const useAuthStore = defineStore({
     setRefreshToken(token: string | null) {
       this.refreshToken = token
     },
-    async login(login_or_email: string, password: string) {
-      const runtimeConfig = useRuntimeConfig()
-      const response = await fetch(`${runtimeConfig.public.apiBaseUrl}/user/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ login_or_email, password })
-      })
+    saveUserTokens(accessToken: string, refreshToken: string) {
+      this.setAccessToken(accessToken)
+      this.setRefreshToken(refreshToken)
 
-      if (response.ok) {
-        const data = await response.json()
+      let parsedToken = parseJwt(accessToken)
 
-        if (data.status === "success") {
-          this.setAccessToken(data.data.access_token)
-          this.setRefreshToken(data.data.refresh_token)
-
-          let parsedToken = parseJwt(data.data.access_token)
-
-          if (parsedToken.nickname) {
-            this.setUser(parsedToken.nickname)
-          } else {
-            this.setUser(parsedToken.login)
-          }
-
-          return true
-        }
+      if (parsedToken.nickname) {
+        this.setUser(parsedToken.nickname)
+      } else {
+        this.setUser(parsedToken.login)
       }
-
-      return false
-    },
-    async signup(login: string, email: string, password: string) {
-      const runtimeConfig = useRuntimeConfig()
-      const response = await fetch(`${runtimeConfig.public.apiBaseUrl}/user/signup`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ login, email, password })
-      })
-
-      if (response.ok) {
-        const data = await response.json()
-
-        if (data.status === "Signup successfully" || data.status === "success") { // TODO: Remove first condition
-          let res = await this.login(login, password)
-          return res
-        }
-      }
-
-      return false
     },
     async refreshAccessToken() {
       const runtimeConfig = useRuntimeConfig()

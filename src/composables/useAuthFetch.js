@@ -1,5 +1,6 @@
 export default function useAuthenticatedFetch() {
   const authStore = useAuthStore();
+  const { $api } = useNuxtApp();
   const router = useRouter()
 
   async function onRequest(ctx) {
@@ -8,10 +9,12 @@ export default function useAuthenticatedFetch() {
       const currentTime = Math.floor(Date.now() / 1000)
 
       if (currentTime > tokenExpiration) {
-        const success = await authStore.refreshAccessToken()
-        if (!success) {
+        const response = await $api.user.refreshToken(authStore.refreshToken)
+        if (!response) {
           router.push('/signin')
           return
+        } else {
+          authStore.saveUserTokens(response.data.access_token, response.data.refresh_token)
         }
       }
 

@@ -74,6 +74,7 @@ export default {
         })
 
         const store = useAuthStore()
+        const { $api } = useNuxtApp()
         const login = ref('')
         const email = ref('')
         const password = ref('')
@@ -92,10 +93,12 @@ export default {
             isLoading.value = true
 
             try {
-                let result = await store.signup(login.value, email.value, password.value)
+                let result = await $api.user.signup(login.value, email.value, password.value)
                 if (!result) {
                     errorMessage.value = "Такой пользователь уже существует!"
                 } else {
+                    let tokens = await $api.user.login(login.value, password.value)
+                    store.saveUserTokens(tokens.data.access_token, tokens.data.refresh_token)
                     router.push('/')
                 }
             } catch (error) {
