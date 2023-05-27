@@ -38,38 +38,8 @@ export const useAuthStore = defineStore({
         this.setUser(parsedToken.login)
       }
     },
-    async refreshAccessToken() {
-      const runtimeConfig = useRuntimeConfig()
-      const response = await fetch(`${runtimeConfig.public.apiBaseUrl}/user/refresh-token`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ refresh_token: this.refreshToken })
-      })
-
-      if (response.ok) {
-        const data = await response.json()
-
-        if (data.status === "success") {
-          this.setAccessToken(data.data.access_token)
-          this.setRefreshToken(data.data.refresh_token)
-
-          let parsedToken = parseJwt(data.data.access_token)
-
-          if (parsedToken.nickname) {
-            this.setUser(parsedToken.nickname)
-          } else {
-            this.setUser(parsedToken.login)
-          }
-
-          return true
-        }
-      }
-
-      console.log("Resetting auth...")
-      this.resetAuth()
-      return false
+    isUserAuthenticated() {
+      return this.accessToken !== null
     },
     resetAuth() {
       this.setUser(null)

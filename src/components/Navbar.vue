@@ -53,7 +53,7 @@ export default {
         const authStore = useAuthStore()
 
         const isLoggedIn = computed(() => {
-            return authStore.accessToken !== null
+            return authStore.isUserAuthenticated()
         })
 
         const username = computed(() => {

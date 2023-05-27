@@ -4,7 +4,7 @@ export default function useAuthenticatedFetch() {
   const router = useRouter()
 
   async function onRequest(ctx) {
-    if (authStore.accessToken) {
+    if (authStore.isUserAuthenticated()) {
       const tokenExpiration = parseJwt(authStore.accessToken).exp - 5
       const currentTime = Math.floor(Date.now() / 1000)
 

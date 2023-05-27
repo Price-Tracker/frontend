@@ -57,13 +57,13 @@ const { $api } = useNuxtApp()
 const product = await $api.product.getProductById(props.productId).then((res) => res.data)
 
 onMounted(async () => {
-    if (authStore.accessToken) {
+    if (authStore.isUserAuthenticated()) {
         await $api.history.addHistory(props.productId)
     }
 })
 
 const addToCart = async (productStoreId) => {
-    if (authStore.accessToken) {
+    if (authStore.isUserAuthenticated()) {
         await $api.cart.addToCart(productStoreId, 1) // allow user to select quantity
     }
 }
