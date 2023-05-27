@@ -48,21 +48,23 @@ const offerString = computed(() => {
     return offerString
 })
 
-const isSubscribed = computed(async () => {
-    if (!authStore.isUserAuthenticated()) {
-        return false
-    }
+let subscribeResponse = ref(false)
 
-    let subscribeInfo = await $api.product.subscribeInfo(props.product.product.id).then(res => res.data)
-    return subscribeInfo.subscribed
+if (authStore.isUserAuthenticated()) {
+    subscribeResponse.value = (await $api.product.subscribeInfo(props.product.product.id).then(res => res.data.subscribed))
+}
+
+const isSubscribed = computed(() => {
+    console.log(subscribeResponse)
+    return subscribeResponse.value
 })
 
 const toggleSubscribe = async (productId) => {
     if (authStore.isUserAuthenticated()) {
-        if (!isSubscribed) {
+        if (!isSubscribed.value) {
             try {
                 await $api.product.subscribeProduct(productId)
-                isSubscribed.value = true
+                subscribeResponse.value = true
                 alert('Вы успешно подписались на уведомления о снижении цены')
             } catch (e) {
                 alert('Произошла ошибка при подписке на уведомления')
@@ -71,7 +73,7 @@ const toggleSubscribe = async (productId) => {
         } else {
             try {
                 await $api.product.unsubscribeProduct(productId)
-                isSubscribed.value = false
+                subscribeResponse.value = false
                 alert('Вы успешно отписались от уведомлений о снижении цены')
             } catch (e) {
                 alert('Произошла ошибка при отписке от уведомлений')
