@@ -51,23 +51,20 @@ const props = defineProps({
     productId: { type: Number, required: true },
 })
 
-const runtimeConfig = useRuntimeConfig()
 const authStore = useAuthStore()
 const { $api } = useNuxtApp()
 
 const product = await $api.product.getProductById(props.productId).then((res) => res.data)
 
-const { post, put } = useAuthFetch()
-
 onMounted(async () => {
     if (authStore.accessToken) {
-        await post(`${runtimeConfig.public.apiBaseUrl}/history`, { product_id: props.productId })
+        await $api.history.addHistory(props.productId)
     }
 })
 
 const addToCart = async (productStoreId) => {
     if (authStore.accessToken) {
-        await put(`${runtimeConfig.public.apiBaseUrl}/cart/add`, { product_store_id: productStoreId, quantity: 1 /* TODO: allow user to select quantity */ })
+        await $api.cart.addToCart(productStoreId, 1) // allow user to select quantity
     }
 }
 </script>
