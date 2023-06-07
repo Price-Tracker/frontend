@@ -7,8 +7,8 @@ class ProductRepository {
         this.$authFetcher = $authFetcher;
     }
 
-    public async getProducts(): Promise<any> {
-        return await this.$fetcher(`/products`, {
+    public async getProducts(limit: number = 20): Promise<any> {
+        return await this.$fetcher(`/products?limit=${limit}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

@@ -23,5 +23,5 @@ const { $api } = useNuxtApp()
 const products = props.categoryId ?
     await $api.product.getProductsByCategoryId(props.categoryId).then((res) => res.data)
     :
-    await $api.product.getProducts().then((res) => res.data)
+    await $api.product.getProducts(12).then((res) => res.data)
 </script>
