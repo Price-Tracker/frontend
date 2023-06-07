@@ -27,54 +27,20 @@
     </div>
 </template>
 
-<!-- <script setup>
-useHead({
-    title: 'Избранное'
-})
-</script> -->
+<script>
+const runtimeConfig = useRuntimeConfig()
 
-<script setup>
-const products = [
+const { authRequest } = useAuthFetch()
+
+const { data: favourite, loading } = await useAsyncData(
+    'favourite',
+    () => $fetch(`${runtimeConfig.public.apiBaseUrl}/favourite`, {
+      method: 'GET',
+      onRequest: authRequest
+    }),
     {
-        id: 1,
-        name: '{product.name}',
-        price: '{product.price}',
-        rating: '{rating}',
-        reviewCount: '{reviewCount}',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-05-image-card-01.jpg',
-        imageAlt: 'TODO',
-        href: '#',
-    },
-    {
-        id: 2,
-        name: '{product.name}',
-        price: '{product.price}',
-        rating: '{rating}',
-        reviewCount: '{reviewCount}',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-05-image-card-01.jpg',
-        imageAlt: 'TODO',
-        href: '#',
-    },
-    {
-        id: 3,
-        name: '{product.name}',
-        price: '{product.price}',
-        rating: '{rating}',
-        reviewCount: '{reviewCount}',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-05-image-card-01.jpg',
-        imageAlt: 'TODO',
-        href: '#',
-    },
-    {
-        id: 4,
-        name: '{product.name}',
-        price: '{product.price}',
-        rating: '{rating}',
-        reviewCount: '{reviewCount}',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-05-image-card-01.jpg',
-        imageAlt: 'TODO',
-        href: '#',
-    },
-    // More products...
-]
+        transform: (favourite) => favourite.data,
+        server: false
+    }
+)
 </script>

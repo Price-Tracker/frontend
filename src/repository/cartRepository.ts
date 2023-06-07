@@ -17,6 +17,15 @@ class CartRepository {
             })
         })
     }
+
+    public async getCart(): Promise<any> {
+        return await this.$fetcher(`/cart`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
 }
 
 export default CartRepository;
