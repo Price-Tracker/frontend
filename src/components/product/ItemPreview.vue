@@ -13,7 +13,7 @@
                     {{ product.min_price }} — {{ product.max_price }} р.
                 </p>
                 <button @click="toggleSubscribe(product.product.id)" class="focus:outline-none">
-                    <Icon v-if="isSubscribed" class="text-pink-600" name="ph:heart-light" size="1.5em" />
+                    <Icon v-if="isSubscribed" class="text-pink-600" name="ph:heart-fill" size="1.5em" />
                     <Icon v-else class="hover:text-pink-600 transition-colors duration-200" name="ph:heart-light"
                         size="1.5em" />
                 </button>

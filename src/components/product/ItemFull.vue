@@ -43,7 +43,7 @@
             </div>
         </div>
     </section>
-    <ProductUsersReviews />
+    <!-- <ProductUsersReviews /> -->
 </template>
 
 <script setup>
