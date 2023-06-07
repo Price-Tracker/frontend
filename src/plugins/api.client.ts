@@ -25,7 +25,7 @@ export default defineNuxtPlugin(nuxtApp => {
     const apiAuthFetcher = $fetch.create(authFetchOptions);
 
     const modules: IApiInstance = {
-        user: new UserRepository(apiFetcher),
+        user: new UserRepository(apiFetcher, apiAuthFetcher),
         product: new ProductRepository(apiFetcher, apiAuthFetcher),
         history: new HistoryRepository(apiAuthFetcher),
         cart: new CartRepository(apiAuthFetcher),

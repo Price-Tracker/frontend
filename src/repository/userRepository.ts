@@ -9,9 +9,11 @@ interface PasswordRequirements {
 
 class UserRepository {
     private $fetcher: typeof $fetch;
+    private $authFetcher: typeof $fetch;
 
-    constructor($fetcher: typeof $fetch) {
+    constructor($fetcher: typeof $fetch, $authFetcher: typeof $fetch) {
         this.$fetcher = $fetcher;
+        this.$authFetcher = $authFetcher;
     }
 
     public async login(login_or_email: string, password: string): Promise<any> {
@@ -53,6 +55,15 @@ class UserRepository {
         })
 
         return res.data as PasswordRequirements;
+    }
+
+    public async getSubscriptions(): Promise<any> {
+        return await this.$authFetcher(`/user/subscriptions`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
     }
 }
 
