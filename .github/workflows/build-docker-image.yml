@@ -1,6 +1,10 @@
 name: CI/CD
 
-on: push
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
 
 jobs:
 
@@ -31,7 +35,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          push: true
+          push: ${{ github.ref == 'refs/heads/main'}}
           tags: |
             ghcr.io/price-tracker/frontend:latest
             ghcr.io/price-tracker/frontend:${{ github.ref_name }}-${{ steps.useful_vars.outputs.short_sha }}-${{ steps.useful_vars.outputs.timestamp }}
