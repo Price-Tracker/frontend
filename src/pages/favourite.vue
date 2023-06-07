@@ -26,7 +26,6 @@ onMounted(async () => {
     for (let productId of productsIds) {
         let product = await $api.product.getProductById(productId).then(res => res.data)
         products.value.push(product)
-        console.log(product)
     }
     isLoaded.value = true
 })
