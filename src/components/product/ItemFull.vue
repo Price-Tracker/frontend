@@ -24,9 +24,9 @@
                     <p v-if="product.product.description" class="leading-relaxed">{{ product.product.description }}</p>
                     <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center flex-col">
                         <div v-for="store in product.prices"
-                            class="title-font font-medium text-base md:text-xl lg:text-xl xl:text-2xl text-gray-900 flex justify-between w-full">
+                            class="m-2 title-font font-medium text-base md:text-xl lg:text-xl xl:text-2xl text-gray-900 flex justify-between w-full">
                             <span class="m-2">
                                 {{ store.price }} р.
                             </span>
