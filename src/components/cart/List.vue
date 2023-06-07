@@ -4,7 +4,7 @@
       <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Корзина</h1>
       <form class="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
         <div v-for="productStore in cart" class="lg:col-span-7">
-          <CartItem :productStore="productStore" />
+          <CartItem :product-store-id="productStore.product_store_id" />
         </div>
         <!-- <CartItem /> -->
         <section aria-labelledby="summary-heading"

@@ -6,7 +6,7 @@
         <!-- <ProductBreadcrumb /> -->
         <div class="container px-5 py-24 mx-auto">
             <div class="lg:w-4/5 mx-auto flex flex-wrap">
-                <div class="flex flex-col items-center">
+                <div class="flex justify-center lg:w-auto w-full">
                     <img v-if="product.product.picture_url" :src="product.product.picture_url"
                         class="w-full max-w-sm hover:scale-105 transition duration-200">
                     <img v-else class="w-full max-w-sm"

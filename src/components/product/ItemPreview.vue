@@ -1,11 +1,14 @@
 <template>
-    <div class="p-4 flex flex-col h-full justify-between">
-        <div>
+    <div :class="{
+        'flex-col': !isCartItem,
+        'flex-row': isCartItem,
+    }" class="p-4 flex h-full justify-between">
+        <div :class="{ 'flex flex-row': isCartItem }">
             <img v-if="product.product.picture_url" :src="product.product.picture_url"
                 class="w-full hover:scale-105 transition duration-200">
             <img v-else class="w-full"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
-            <div class="mt-4 flex justify-between">
+            <div v-if="!isCartItem" class="mt-4 flex justify-between">
                 <p v-if="product.min_price === product.max_price" class="whitespace-nowrap font-bold text-base text-black">
                     {{ product.min_price }} р.
                 </p>
@@ -20,7 +23,12 @@
             </div>
             <p class="mt-2 text-black line-clamp-3 break-words">{{ product.product.name }}</p>
         </div>
-        <NuxtLink :to="'/product/' + product.product.id">
+        <div v-if="isCartItem" class="mt-4 w-full">
+            <p>
+                {{ product.store.name }}: {{ product.price }} руб.
+            </p>
+        </div>
+        <NuxtLink v-if="!isCartItem" :to="'/product/' + product.product.id">
             <button
                 class="w-full mt-4 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">
                 {{ product.prices.length }} {{ offerString }}
@@ -32,6 +40,7 @@
 <script setup>
 const props = defineProps({
     product: { type: Object, required: true },
+    isCartItem: { type: Boolean, required: false, default: false },
 })
 
 const authStore = useAuthStore()

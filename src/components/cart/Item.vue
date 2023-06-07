@@ -1,23 +1,22 @@
 <template>
-    <section aria-labelledby="cart-heading" class="lg:col-span-7">
-        <!-- Show product_store_id and quantity from productStore for debug -->
-        <div class="flex justify-between">
-            <p class="text-sm text-gray-500">
-                {{ productStore.product_store_id }} {{ productStore.quantity }}
-            </p>
-        </div>
+    <section v-if="product" aria-labelledby="cart-heading" class="lg:col-span-7">
+        <ProductItemPreview :product="product" :isCartItem="true" />
     </section>
 </template>
 
 <script setup>
 const props = defineProps({
-    productStore: { type: Object, required: true },
+    productStoreId: { type: Number, required: true }
 })
 
 const { $api } = useNuxtApp()
 
+const product = ref(null)
+
 onMounted(async () => {
-    const product = await $api.product.getProductByProductStoreId(props.productStore.product_store_id).then((res) => res.data)
+    let fetchResult = await $api.product.getProductByProductStoreId(props.productStoreId).then((res) => res.data)
+    product.value = fetchResult
+    console.log(fetchResult)
 })
 
 </script>
