@@ -68,7 +68,7 @@
 
 <script lang="ts">
 export default {
-    setup() {
+    async setup() {
         const head = useHead({
             title: 'Регистрация'
         })
@@ -82,10 +82,19 @@ export default {
         const isLoading = ref(false)
         const router = useRouter()
 
+        const passwordRequirements = await $api.user.passwordRequirements()
+
         const isFormValid = computed(() => {
             errorMessage.value = ''
-            return login.value.trim() !== '' && email.value.trim() !== '' && password.value.trim() !== ''
-                && login.value.length >= 4 && password.value.length >= 4
+            let isValid = login.value.length >= 3 && login.value.length <= 32 &&
+                email.value.length >= 3 && email.value.length <= 32 &&
+                password.value.length >= passwordRequirements.min_length &&
+                password.value.length <= passwordRequirements.max_length &&
+                (password.value.match(/[A-Z]/g)?.length || 0) >= passwordRequirements.min_uppercase &&
+                (password.value.match(/[a-z]/g)?.length || 0) >= passwordRequirements.min_lowercase &&
+                (password.value.match(/[0-9]/g)?.length || 0) >= passwordRequirements.min_digits &&
+                (password.value.match(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g)?.length || 0) >= passwordRequirements.min_special
+            return isValid
         })
 
         const signup = async () => {
