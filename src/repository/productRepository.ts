@@ -34,6 +34,15 @@ class ProductRepository {
         })
     }
 
+    public async getProductByProductStoreId(productStoreId: number): Promise<any> {
+        return await this.$fetcher(`/product/byStoreId/${productStoreId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
+
     public async subscribeInfo(productId: number): Promise<any> {
         return await this.$authFetcher(`/product/${productId}/subscription`, {
             method: 'GET',
