@@ -55,7 +55,6 @@ if (authStore.isUserAuthenticated()) {
 }
 
 const isSubscribed = computed(() => {
-    console.log(subscribeResponse)
     return subscribeResponse.value
 })
 
