@@ -24,4 +24,5 @@
 const { $api } = useNuxtApp()
 
 const cart = await $api.cart.getCart().then((res) => res.data)
+
 </script>

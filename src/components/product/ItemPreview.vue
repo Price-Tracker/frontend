@@ -3,7 +3,7 @@
         'flex-col': !isCartItem,
         'flex-row': isCartItem,
     }" class="p-4 flex h-full justify-between">
-        <div :class="{ 'flex flex-row': isCartItem }">
+        <div :class="{ 'flex w-full': isCartItem }">
             <img v-if="product.product.picture_url" :src="product.product.picture_url"
                 class="w-48 px-8 hover:scale-105 transition duration-200">
             <img v-else class="w-full"
@@ -21,11 +21,10 @@
                         size="1.5em" />
                 </button>
             </div>
-            <p v-if="isSubscribed" class="mt-4 w-full h-full text-black line-clamp-3 break-words">{{ product.product.name }}</p>
-            <p v-else class="mt-4 text-black line-clamp-3 break-words">{{ product.product.name }}</p>
+            <p class="mt-4 w-full h-full text-black line-clamp-3 break-words">{{ product.product.name }}</p>
 
-            <div v-if="isCartItem" class="px-8 mt-4">
-                <p>{{ product.store.name }}: {{ product.price }} р.</p>
+            <div v-if="isCartItem" class="w-full mt-4">
+                <p class="">{{ product.store.name }}: {{ product.price }} р.</p>
             </div>
             <div v-if="isCartItem" class="mt-4">
                 <Icon class="text-gray-600" name="ph:x" size="1.5em" />
@@ -33,7 +32,7 @@
         </div>
         <NuxtLink v-if="!isCartItem" :to="'/product/' + product.product.id">
             <button
-                class="w-full mt-4 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">
+                class="w-full mt-8 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">
                 {{ product.prices.length }} {{ offerString }}
             </button>
         </NuxtLink>
