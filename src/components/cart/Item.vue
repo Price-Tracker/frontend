@@ -1,5 +1,5 @@
 <template>
-    <section v-if="product" aria-labelledby="cart-heading" class="lg:col-span-7">
+    <section v-if="product" aria-labelledby="cart-heading" class="lg:col-span-12">
         <ProductItemPreview :product="product" :isCartItem="true" />
     </section>
 </template>

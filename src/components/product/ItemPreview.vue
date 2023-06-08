@@ -5,7 +5,7 @@
     }" class="p-4 flex h-full justify-between">
         <div :class="{ 'flex flex-row': isCartItem }">
             <img v-if="product.product.picture_url" :src="product.product.picture_url"
-                class="w-full hover:scale-105 transition duration-200">
+                class="w-48 px-8 hover:scale-105 transition duration-200">
             <img v-else class="w-full"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
             <div v-if="!isCartItem" class="mt-4 flex justify-between">
@@ -21,12 +21,15 @@
                         size="1.5em" />
                 </button>
             </div>
-            <p class="mt-2 text-black line-clamp-3 break-words">{{ product.product.name }}</p>
-        </div>
-        <div v-if="isCartItem" class="mt-4 w-full">
-            <p>
-                {{ product.store.name }}: {{ product.price }} руб.
-            </p>
+            <p v-if="isSubscribed" class="mt-4 w-full h-full text-black line-clamp-3 break-words">{{ product.product.name }}</p>
+            <p v-else class="mt-4 text-black line-clamp-3 break-words">{{ product.product.name }}</p>
+
+            <div v-if="isCartItem" class="px-8 mt-4">
+                <p>{{ product.store.name }}: {{ product.price }} р.</p>
+            </div>
+            <div v-if="isCartItem" class="mt-4">
+                <Icon class="text-gray-600" name="ph:x" size="1.5em" />
+            </div>
         </div>
         <NuxtLink v-if="!isCartItem" :to="'/product/' + product.product.id">
             <button
