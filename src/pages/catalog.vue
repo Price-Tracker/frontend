@@ -1,7 +1,7 @@
 <template>
     <main class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8">
         <div class="border-b border-gray-200 pt-24 pb-10">
-            <h1 class="text-4xl font-bold tracking-tight text-gray-900">{product.category}</h1>
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900">В разработке!</h1>
         </div>
 
         <div class="pt-12 pb-24 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
