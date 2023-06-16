@@ -17,7 +17,7 @@ export default {
     data() {
         return {
             links: [
-                { label: 'О сервисе', to: '/about' },
+                { label: 'test', to: '/about' },
             ],
         };
     },
