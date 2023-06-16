@@ -21,8 +21,7 @@
                         size="1.5em" />
                 </button>
             </div>
-            <p class="mt-4 w-full h-full text-black line-clamp-3 break-words">{{ product.product.name }}</p>
-
+            <p class="mt-4 mb-4 w-full h-full text-black line-clamp-3 break-words">{{ product.product.name }}</p>
             <div v-if="isCartItem" class="w-full mt-4">
                 <p class="">{{ product.store.name }}: {{ product.price }} р.</p>
             </div>
@@ -32,7 +31,7 @@
         </div>
         <NuxtLink v-if="!isCartItem" :to="'/product/' + product.product.id">
             <button
-                class="w-full mt-8 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">
+                class="w-full mt-4 rounded p-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-200 text-white">
                 {{ product.prices.length }} {{ offerString }}
             </button>
         </NuxtLink>

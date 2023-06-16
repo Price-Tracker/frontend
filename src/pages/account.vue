@@ -27,7 +27,7 @@
                   class="block w-full min-w-0 flex-1 rounded-none rounded-r-md border-blue-gray-300 text-blue-gray-900 focus:border-blue-500 focus:ring-blue-500 sm:text-sm" />
               </div>
             </div>
-            <div class="sm:col-span-6">
+            <!-- <div class="sm:col-span-6">
               <label for="photo" class="block text-sm font-medium text-blue-gray-900">Фото профиля</label>
               <div class="mt-1 flex items-center">
                 <img class="inline-block h-12 w-12 rounded-full"
@@ -46,7 +46,7 @@
                     class="ml-3 rounded-md border border-transparent bg-transparent py-2 px-3 text-sm font-medium text-blue-gray-900 hover:text-blue-gray-700 focus:border-blue-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-gray-50">Удалить</button>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="grid grid-cols-1 gap-y-6 pt-8 sm:grid-cols-6 sm:gap-x-6">
             <p class="text-sm text-blue-gray-500 sm:col-span-6">Этот аккаунт был создан <time
@@ -59,6 +59,9 @@
               class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Сохранить</button>
           </div>
         </form>
+
+
+        <button type="button" @click="logout" class="text-sm text-center text-red-600">Выйти из аккаунта</button>
       </div>
     </div>
   </div>
@@ -68,4 +71,10 @@
 useHead({
   title: 'Аккаунт'
 })
+
+const logout = async () => {
+  await this.$fetch('/api/user/', { method: 'POST' });
+  localStorage.removeItem('authToken');
+  this.$router.push('/login');
+}
 </script>
