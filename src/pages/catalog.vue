@@ -1,10 +1,7 @@
 <template>
   <main class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8">
-    <div class="border-b border-gray-200 pt-24 pb-10">
-      <h1 class="text-4xl font-bold tracking-tight text-gray-900">В разработке!</h1>
-    </div>
     <div class="pt-12 pb-24 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
-      <!-- <div class="hidden lg:block">
+      <div class="hidden lg:block">
         <form class="space-y-10 divide-y divide-gray-200">
           <div v-for="(section, sectionIdx) in filters" :key="section.name" :class="sectionIdx === 0 ? null : 'pt-10'">
             <fieldset>
@@ -20,14 +17,13 @@
             </fieldset>
           </div>
         </form>
-      </div> -->
+      </div>
 
-
-      <!-- <section aria-labelledby="product-heading" class="mt-6 lg:col-span-2 lg:mt-0 xl:col-span-3">
+      <section aria-labelledby="product-heading" class="mt-6 lg:col-span-2 lg:mt-0 xl:col-span-3">
 
         <div v-for="product in products" class="bg-white drop-shadow-md overflow-hidden rounded-lg">
-                    <ProductItemPreview :product="product" />
-                </div>
+          <ProductItemPreview :product="product" />
+        </div>
         <h2 id="product-heading" class="sr-only">Products</h2>
 
         <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:gap-x-8 xl:grid-cols-3">
@@ -51,20 +47,25 @@
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
     </div>
   </main>
 </template>
 
 <script setup>
+const props = defineProps({
+    productId: { type: Number, required: true },
+})
 
-// const props = defineProps({
-//     product: { type: Object, required: true },
-// })
+const authStore = useAuthStore()
+const { $api } = useNuxtApp()
 
-// const authStore = useAuthStore()
-// const { $api } = useNuxtApp()
+const product = await $api.product.getProductById(props.productId).then((res) => res.data)
 
-// const { data: products } = useQuery('products', () => $api.get('/products'))
+onMounted(async () => {
+    if (authStore.isUserAuthenticated()) {
+        await $api.history.addHistory(props.productId)
+    }
+})
 
 </script>

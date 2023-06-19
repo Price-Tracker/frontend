@@ -6,7 +6,7 @@
         <form class="divide-y-blue-gray-200 mt-6 space-y-8 divide-y">
           <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-6 sm:gap-x-6">
             <div class="sm:col-span-6">
-              <h2 class="text-xl font-medium text-blue-gray-900">Профиль</h2>
+              <h2 class="text-xl font-medium text-blue-gray-900">Персональная информация</h2>
               <p class="mt-1 text-sm text-blue-gray-500">Эта информация будет отображаться публично, поэтому будьте
                 осторожны с тем, чем вы делитесь.</p>
             </div>
@@ -27,41 +27,27 @@
                   class="block w-full min-w-0 flex-1 rounded-none rounded-r-md border-blue-gray-300 text-blue-gray-900 focus:border-blue-500 focus:ring-blue-500 sm:text-sm" />
               </div>
             </div>
-            <!-- <div class="sm:col-span-6">
-              <label for="photo" class="block text-sm font-medium text-blue-gray-900">Фото профиля</label>
-              <div class="mt-1 flex items-center">
-                <img class="inline-block h-12 w-12 rounded-full"
-                  src=""
-                  alt="" />
-                <div class="ml-4 flex">
-                  <div
-                    class="relative flex cursor-pointer items-center rounded-md border border-blue-gray-300 bg-white py-2 px-3 shadow-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2 focus-within:ring-offset-blue-gray-50 hover:bg-blue-gray-50">
-                    <label for="user-photo" class="pointer-events-none relative text-sm font-medium text-blue-gray-900">
-                      <span>Сменить</span>
-                    </label>
-                    <input id="user-photo" name="user-photo" type="file"
-                      class="absolute inset-0 h-full w-full cursor-pointer rounded-md border-gray-300 opacity-0" />
-                  </div>
-                  <button type="button"
-                    class="ml-3 rounded-md border border-transparent bg-transparent py-2 px-3 text-sm font-medium text-blue-gray-900 hover:text-blue-gray-700 focus:border-blue-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-gray-50">Удалить</button>
-                </div>
-              </div>
-            </div> -->
           </div>
           <div class="grid grid-cols-1 gap-y-6 pt-8 sm:grid-cols-6 sm:gap-x-6">
             <p class="text-sm text-blue-gray-500 sm:col-span-6">Этот аккаунт был создан <time
                 datetime="2017-01-05T20:35:40">{account.date.created}</time>.</p>
           </div>
+          <div class="flex justify-start pt-8">
+            <button type="submit" class="ml-3 mx-4 inline-flex justify-center rounded-md border border-transparent 
+                bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700
+                 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Сохранить</button>
+            <button type="button" class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium 
+                text-blue-gray-900 shadow-sm hover:bg-blue-gray-50 focus:outline-none focus:ring-2 
+                focus:ring-blue-500 focus:ring-offset-2">Отмена</button>
+          </div>
           <div class="flex justify-end pt-8">
-            <button type="button"
-              class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-blue-gray-900 shadow-sm hover:bg-blue-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Отмена</button>
-            <button type="submit"
-              class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Сохранить</button>
+            <button type="button" @click="logout" class="text-sm text-center text-red-600">
+              <NuxtLink to="/signin">
+                Выйти из аккаунта
+              </NuxtLink>
+            </button>
           </div>
         </form>
-
-
-        <button type="button" @click="logout" class="text-sm text-center text-red-600">Выйти из аккаунта</button>
       </div>
     </div>
   </div>
@@ -73,8 +59,7 @@ useHead({
 })
 
 const logout = async () => {
-  await this.$fetch('/api/user/', { method: 'POST' });
-  localStorage.removeItem('authToken');
-  this.$router.push('/login');
+  localStorage.removeItem("auth-store");
+  location.reload();
 }
 </script>
