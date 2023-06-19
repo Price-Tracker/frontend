@@ -33,7 +33,6 @@
                             <span class="m-2">
                                 {{ store.store_name }}
                             </span>
-
                             <button @click="addToCart(store.product_store_id)"
                                 class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">В
                                 корзину</button>
