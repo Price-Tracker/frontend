@@ -16,7 +16,7 @@
                     <div class="flex justify-between">
                         <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ product.product.name }}</h1>
                         <button type="button"
-                            class="ml-4 flex items-center justify-center rounded-md py-3 px-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500">
+                        @click="toggleSubscribe(product.productStoreId)" class="ml-4 flex items-center justify-center rounded-md py-3 px-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500">
                             <Icon name="ph:heart-light" class="h-8 w-8 flex-shrink-0" aria-hidden="true" />
                             <span class="sr-only">Add to favorites</span>
                         </button>
@@ -64,6 +64,41 @@ onMounted(async () => {
 const addToCart = async (productStoreId) => {
     if (authStore.isUserAuthenticated()) {
         await $api.cart.addToCart(productStoreId, 1) // allow user to select quantity
+    }
+    alert("Товар добавлен в корзину!")
+}
+
+let subscribeResponse = ref(false)
+
+if (authStore.isUserAuthenticated()) {
+    subscribeResponse.value = (await $api.product.subscribeInfo(props.productId).then(res => res.data.subscribed))
+}
+
+const isSubscribed = computed(() => {
+    return subscribeResponse.value
+})
+
+const toggleSubscribe = async (productId) => {
+    if (authStore.isUserAuthenticated()) {
+        if (!isSubscribed.value) {
+            try {
+                await $api.product.subscribeProduct(productId)
+                subscribeResponse.value = true
+                alert('Вы успешно подписались на уведомления о снижении цены')
+            } catch (e) {
+                alert('Произошла ошибка при подписке на уведомления')
+                console.error(e)
+            }
+        } else {
+            try {
+                await $api.product.unsubscribeProduct(productId)
+                subscribeResponse.value = false
+                alert('Вы успешно отписались от уведомлений о снижении цены')
+            } catch (e) {
+                alert('Произошла ошибка при отписке от уведомлений')
+                console.error(e)
+            }
+        }
     }
 }
 </script>
