@@ -26,6 +26,15 @@ class CartRepository {
             }
         })
     }
+
+    public async getCartTotalPrice(): Promise<any> {
+        return await this.$fetcher(`/cart/total`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
 }
 
 export default CartRepository;

@@ -12,7 +12,7 @@
         <h2 id="summary-heading" class="text-lg font-medium text-gray-900">Итоговая стоимость</h2>
         <dl class="mt-6 space-y-4">
           <div class="flex items-center justify-between border-t border-gray-200 pt-4">
-            <dd class="text-base font-medium text-gray-900">{cart.price} {{ }}</dd>
+            <dd class="text-base font-medium text-gray-900">{{ cartTotalPrice }} руб.</dd>
           </div>
         </dl>
       </section>
@@ -24,5 +24,6 @@
 const { $api } = useNuxtApp()
 
 const cart = await $api.cart.getCart().then((res) => res.data)
+const cartTotalPrice = await $api.cart.getCartTotalPrice().then((res) => res.data.toFixed(2))
 
 </script>
